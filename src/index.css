@@ -30,6 +30,11 @@ code {
   justify-content: center;
 }
 
+.profile-img {
+  height: 5%;
+  width: 5%;
+}
+
 
 /* Calendar CSS */
 

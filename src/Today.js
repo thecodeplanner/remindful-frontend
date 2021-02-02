@@ -23,20 +23,28 @@ function Today({days, setDays, currentUser}) {
             <DayDetails key={today.id} today={today}/>
         )
     })
+
+    const todayTasks = findToday.map((today) => {
+        return (
+            <TaskDetails key={today.tasks} tasks={today.tasks}/>
+        )
+    })
+
+    const todaySelfcare = findToday.map((today) => {
+        return (
+            <SelfcareDetails key={today.date} selfcare={today.selfcares} />
+        )
+    })
     
-    console.log(todayDetails)
+    console.log(todayTasks)
 
-     // <div>
-                {/* <DayDetails key={today.date} today={today}/>
-                <TaskDetails key={today.id} tasks={today.tasks} />
-                <SelfcareDetails key={today.date} selfcare={today.selfcares} /> */}
-            // </div>
 
-    return(
-        <>
-        <h1>  </h1>
+    return (
+        <div>
         {todayDetails}
-        </>
+        {todayTasks}
+        {todaySelfcare}
+        </div>
     )
 }
 

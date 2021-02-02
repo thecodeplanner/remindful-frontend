@@ -1,8 +1,16 @@
 
-function SelfcareDetails({today}) {
+function SelfcareDetails({selfcare}) {
+    const selfcareItems = selfcare.map((selfcare) => {
+        return (
+            <li> {selfcare.description}</li>
+        )
+    })
     return (
         <div>
-            Selfcare:
+            <h3>Selfcare Checklist:</h3> 
+            <div>
+                {selfcareItems}
+            </div>
         </div>
 
     )

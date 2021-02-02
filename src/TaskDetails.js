@@ -1,8 +1,16 @@
-function TaskDetails({today}) {
+function TaskDetails({tasks}) {
+    const taskItems = tasks.map((task) => {
+        return (
+            <li> {task.description}</li>
+        )
+    })
     
     return (
         <div>
-            Tasks:
+            <h3>To Do:</h3>
+            <div>
+                {taskItems}
+            </div>
         </div>
 
     )

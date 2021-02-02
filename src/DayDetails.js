@@ -4,7 +4,8 @@ import { eo } from 'date-fns/locale';
 
 function DayDetails({today}) {
     const date = new Date()
-    const formattedDate = format(date,'iiii, MMMM eo')
+    console.log(date)
+    const formattedDate = format(date,'iiii, MMMM do')
     
     return (
         <div>
