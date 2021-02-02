@@ -14,7 +14,11 @@ function TaskDetails({tasks, dayId}) {
 
     const taskItems = allTasks.map((task) => {
         return (
-            <li>{task.description}</li>
+            <div>
+                <i className="circle outline icon" />
+                <span>{task.description}</span>
+            </div>
+            
         )
     })
     

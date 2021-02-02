@@ -8,7 +8,11 @@ function SelfcareDetails({selfcare, dayId}) {
 
     const selfcareItems = allSelfcareItems.map((selfcare) => {
         return (
-            <li>{selfcare.description}</li>
+            <div>
+                <i className="heart outline icon" />
+                <span>{selfcare.description}</span>
+            </div>
+            
         )
     })
 
