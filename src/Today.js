@@ -38,7 +38,7 @@ function Today({days, setDays, currentUser}) {
 
     const todaySelfcare = findToday.map((today) => {
         return (
-            <SelfcareDetails key={today.date} selfcare={today.selfcares} />
+            <SelfcareDetails key={today.date} selfcare={today.selfcares} dayId={today.id} />
         )
     })
     

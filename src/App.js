@@ -13,7 +13,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [days, setDays] = useState(null)
 
-  console.log(currentUser)
+  // console.log(currentUser)
 
   if (!days && currentUser) {
       fetch(`http://localhost:3000/users/${currentUser.id}`)
@@ -21,7 +21,7 @@ function App() {
         .then(data => setDays(data.days))
   }
   
-  console.log(days)
+  // console.log(days)
 
   return (
     <div>
