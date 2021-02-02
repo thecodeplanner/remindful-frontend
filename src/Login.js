@@ -15,7 +15,7 @@ function Login({setCurrentUser}) {
             .then((res) => res.json())
             .then(setCurrentUser)
         return(
-            history.push('/today')
+            history.push('/calendar')
         )
     }
 

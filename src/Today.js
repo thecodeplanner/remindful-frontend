@@ -1,10 +1,12 @@
-import React from "react"
+import React, {useState} from "react"
 import { format } from 'date-fns'
 import DayDetails from './DayDetails'
 import TaskDetails from './TaskDetails'
 import SelfcareDetails from './SelfcareDetails'
 
-function Today({days}) {
+function Today({days, setDays, currentUser}) {
+    const [dayDetails, setDayDetails] = useState(null)
+
     const today = new Date()
     const formattedDate = format(today, 'yyyy-MM-dd')
 
@@ -14,22 +16,25 @@ function Today({days}) {
 
     // console.log(formattedDate)
     // console.log(days)
-    // console.log(findToday)
+    console.log(findToday)
 
     const todayDetails = findToday.map((today) => {
         return (
-            <div>
-                <DayDetails key={today.date} today={today}/>
-                <TaskDetails key={today.id} tasks={today.tasks} />
-                <SelfcareDetails key={today.date} selfcare={today.selfcares} />
-            </div>
-            
+            <DayDetails key={today.id} today={today}/>
         )
     })
+    
+    console.log(todayDetails)
+
+     // <div>
+                {/* <DayDetails key={today.date} today={today}/>
+                <TaskDetails key={today.id} tasks={today.tasks} />
+                <SelfcareDetails key={today.date} selfcare={today.selfcares} /> */}
+            // </div>
 
     return(
         <>
-        <h1> Today </h1>
+        <h1>  </h1>
         {todayDetails}
         </>
     )

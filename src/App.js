@@ -8,29 +8,20 @@ import Today from './Today'
 import Profile from './Profile'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
-  const [days, setDays] = useState([])
+  const [days, setDays] = useState(null)
 
   console.log(currentUser)
 
-  useEffect(() => {
-    fetch('http://localhost:3000/days')
-      .then(res => res.json())
-      .then(daysData => setDays(daysData)
-      )
-  },[])
-
-  if (currentUser) {
-    const userDays = days.filter((days) => {
-      return days.user_id === currentUser.id
-    })
-    setDays(userDays)
+  if (!days && currentUser) {
+      fetch(`http://localhost:3000/users/${currentUser.id}`)
+        .then(res => res.json())
+        .then(data => setDays(data.days))
   }
-
-   console.log(days)
-
   
+  console.log(days)
 
   return (
     <div>
@@ -47,10 +38,10 @@ function App() {
            <Signup setCurrentUser={setCurrentUser}/>
          </Route>
          <Route exact path='/calendar'>
-           <CalendarPage />
+           <CalendarPage days={days}/>
          </Route>
          <Route exact path='/today'>
-           <Today days={days} />
+           <Today currentUser={currentUser} days={days} setDays={setDays} />
          </Route>
          <Route exact path='/profile'>
            <Profile currentUser={currentUser} />

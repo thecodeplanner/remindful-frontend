@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { format } from 'date-fns';
 
-function CalendarPage() {
-    const [date, setDate] =useState(new Date())
+function CalendarPage({days}) {
+    const [date, setDate] = useState(new Date())
 
     function handleChangeDate(e) {
         setDate(e)
