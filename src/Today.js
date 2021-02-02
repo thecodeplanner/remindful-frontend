@@ -7,6 +7,9 @@ import SelfcareDetails from './SelfcareDetails'
 function Today({days, setDays, currentUser}) {
     const [dayDetails, setDayDetails] = useState(null)
 
+    const [tasks, setTasks] = useState(null)
+
+
     const today = new Date()
     const formattedDate = format(today, 'yyyy-MM-dd')
 
@@ -26,7 +29,9 @@ function Today({days, setDays, currentUser}) {
 
     const todayTasks = findToday.map((today) => {
         return (
-            <TaskDetails key={today.tasks} tasks={today.tasks}/>
+            <>
+            <TaskDetails key={today.tasks} tasks={today.tasks} dayId={today.id}/>
+            </>
         )
     })
 

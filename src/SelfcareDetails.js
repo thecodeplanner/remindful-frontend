@@ -2,7 +2,7 @@
 function SelfcareDetails({selfcare}) {
     const selfcareItems = selfcare.map((selfcare) => {
         return (
-            <li> {selfcare.description}</li>
+            <li>{selfcare.description}</li>
         )
     })
     return (
