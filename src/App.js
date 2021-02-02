@@ -1,34 +1,59 @@
 import React, {useEffect, useState} from 'react'
-import Calendar from 'react-calendar';
-import { format } from 'date-fns'
+import Navbar from './Navbar'
 import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
-
-// import logo from './logo.svg';
-// import './App.css';
+import CalendarPage from './CalendarPage'
+import Today from './Today'
+import Profile from './Profile'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null)
+  const [days, setDays] = useState([])
+
+  console.log(currentUser)
 
   useEffect(() => {
     fetch('http://localhost:3000/days')
       .then(res => res.json())
-      .then(daysData => console.log(daysData))
-  })
+      .then(daysData => setDays(daysData)
+      )
+  },[])
+
+  if (currentUser) {
+    const userDays = days.filter((days) => {
+      return days.user_id === currentUser.id
+    })
+    setDays(userDays)
+  }
+
+   console.log(days)
+
+  
 
   return (
     <div>
      <Router>
+       <Navbar />
        <Switch>
          <Route exact path ="/">
            <Home />
          </Route>
          <Route exact path ='/login'>
-           <Login />
+           <Login setCurrentUser={setCurrentUser} />
          </Route>
          <Route exact path ='/signup'>
-           <Signup/>
+           <Signup setCurrentUser={setCurrentUser}/>
+         </Route>
+         <Route exact path='/calendar'>
+           <CalendarPage />
+         </Route>
+         <Route exact path='/today'>
+           <Today days={days} />
+         </Route>
+         <Route exact path='/profile'>
+           <Profile currentUser={currentUser} />
          </Route>
        </Switch>
      </Router>
