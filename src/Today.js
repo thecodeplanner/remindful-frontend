@@ -5,9 +5,10 @@ import TaskDetails from './TaskDetails'
 import SelfcareDetails from './SelfcareDetails'
 
 function Today({days, setDays, currentUser}) {
-    const [dayDetails, setDayDetails] = useState(null)
+    // const [dayDetails, setDayDetails] = useState(null)
 
-    const [tasks, setTasks] = useState(null)
+    // const [tasks, setTasks] = useState(null)
+
 
 
     const today = new Date()
@@ -29,11 +30,11 @@ function Today({days, setDays, currentUser}) {
 
     const todayTasks = findToday.map((today) => {
         return (
-            <>
             <TaskDetails key={today.tasks} tasks={today.tasks} dayId={today.id}/>
-            </>
         )
     })
+
+    // console.log(tasks)
 
     const todaySelfcare = findToday.map((today) => {
         return (
@@ -41,7 +42,6 @@ function Today({days, setDays, currentUser}) {
         )
     })
     
-    console.log(todayTasks)
 
 
     return (

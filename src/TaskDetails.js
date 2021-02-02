@@ -1,7 +1,18 @@
 import TaskForm from './TaskForm'
+import React, {useState} from "react"
 
 function TaskDetails({tasks, dayId}) {
-    const taskItems = tasks.map((task) => {
+    const [allTasks, setAllTasks] = useState(tasks)
+
+    // console.log(allTasks)
+
+    function handleAddTask(newTask) {
+        const newTaskList = [...allTasks, newTask ]
+        setAllTasks(newTaskList)
+    }
+   
+
+    const taskItems = allTasks.map((task) => {
         return (
             <li>{task.description}</li>
         )
@@ -10,7 +21,7 @@ function TaskDetails({tasks, dayId}) {
     return (
         <div>
             <h3>To Do:</h3>
-            <TaskForm tasks={tasks} dayId={dayId}/>
+            <TaskForm tasks={tasks} dayId={dayId} setAllTasks={handleAddTask}/>
             <div>
                 {taskItems}
             </div>
