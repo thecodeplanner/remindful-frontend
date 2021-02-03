@@ -164,3 +164,50 @@ code {
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+
+/* Main Page Layout */
+.main-page-container {
+  border: solid blue 3px;
+}
+
+.grateful {
+  border: solid black 1px;
+}
+
+.mood {
+  border: solid black 1px;
+}
+
+.water {
+  border: solid black 1px;
+}
+
+.to-do {
+  border: solid black 1px;
+}
+
+.selfcare {
+  border: solid black 1px;
+}
+
+.edit-pencil {
+  padding: 0.1rem 0.2rem;
+  border-radius: 5px;
+  border: 1px solid var(--bg-color-3);
+  background-color: var(--bg-color-2);
+  margin: 0 0.25rem;
+  cursor: pointer;
+}
+
+div .actions {
+  /* display: inline-block; */
+  position: relative;
+  top: 0;
+  transform: translateY(-50%);
+  left: 15rem;
+  display: none;
+}
+
+div:hover .actions {
+  display: block;
+}
