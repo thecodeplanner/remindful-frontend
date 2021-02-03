@@ -1,35 +1,39 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import TaskForm from './TaskForm'
 import SelfcareForm from './SelfcareForm'
 import { useParams } from "react-router-dom";
 import EditDay from './EditDay';
+import EditMood from './EditMood';
 
 function NewDay() {
     const [day, setDay] = useState(null);
     const [entry, setEntry] = useState(null)
+    const [mood, setMood] = useState(null)
     const [tasks, setTasks] = useState(null)
     const [selfcare, setSelfcare] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
-    const [isEditing, setIsEditing] = useState(false)
+
+    const [isEditingEntry, setIsEditingEntry] = useState(false)
+    const [isEditingMood, setIsEditingMood] = useState(false)
+
     const params = useParams()
 
     useEffect(() => {
         fetch(`http://localhost:3000/days/${params.id}`)
-         .then(r => r.json())
-         .then((day) => {
-         setDay(day)
-         setEntry(day.entry)
-         setTasks(day.tasks)
-         setSelfcare(day.selfcares)
-         setIsLoaded(true)
-         })
-    },[params.id])
+            .then(r => r.json())
+            .then((day) => {
+                setDay(day)
+                setEntry(day.entry)
+                setMood(day.mood)
+                setTasks(day.tasks)
+                setSelfcare(day.selfcares)
+                setIsLoaded(true)
+            })
+    }, [params.id])
 
     if (!isLoaded) return <h2>Loading...</h2>;
 
-    // console.log(day.tasks)
-
-       const taskItems = tasks.map((task) => {
+    const taskItems = tasks.map((task) => {
         return (
             <div>
                 <i className="circle outline icon" />
@@ -48,7 +52,7 @@ function NewDay() {
     })
 
     function handleAddTask(newTask) {
-        const newTaskList = [...tasks, newTask ]
+        const newTaskList = [...tasks, newTask]
         setTasks(newTaskList)
     }
 
@@ -59,52 +63,64 @@ function NewDay() {
 
     function handleUpdateEntry(newEntry) {
         setEntry(newEntry)
-        setIsEditing(false)
+        setIsEditingEntry(false)
     }
 
-    
+    function handleUpdateMood(newMood) {
+        setMood(newMood)
+        setIsEditingMood(false)
+    }
+
+
     return (
         <div className='main-page-container'>
             <h2>Date: {day.date} </h2>
 
             <div className='grateful'>
-            <h3>I'm grateful for ...</h3> 
+                <h3>I'm grateful for ...</h3>
 
-                        {isEditing ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div> {entry} </div>}
+                {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div> {entry} </div>}
 
-                        <div className="actions">
-                            <button className='edit-pencil' onClick={() => setIsEditing(isEditing => !isEditing)}>
-                                <i className="pencil alternate icon" />
-                             </button>
-                        </div>
-                        
-                
-                        
-                    </div>
+                <div className="actions">
+                    <button className='edit-pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
+                        <i className="pencil alternate icon" />
+                    </button>
+                </div>
+
+
+
+            </div>
 
             <div className='mood'>
-                Mood: {day.mood}
+
+                {isEditingMood ? <EditMood dayMood={mood} id={day.id} onUpdateMood={handleUpdateMood} /> : <p>Mood: {mood}</p>}
+
+                <div className="actions">
+                    <button className='edit-pencil' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
+                        <i className="pencil alternate icon" />
+                    </button>
+                </div>
             </div>
-            
+
             <div className='water'>
-                Water Intake: {day.water}
+                Water Intake: {day.water} 
             </div>
 
             <div className='to-do'>
-                <h3>To Do:</h3> 
-                <TaskForm setAllTasks={handleAddTask} dayId={day.id}/>
+                <h3>To Do:</h3>
+                <TaskForm setAllTasks={handleAddTask} dayId={day.id} />
                 {taskItems}
 
             </div>
-           
-     
+
+
             <div className='selfcare'>
                 <h3>Selfcare Checklist</h3>
                 <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />
                 {selfcareItems}
             </div>
-            
-            
+
+
         </div>
     )
 }
