@@ -1,35 +1,34 @@
-import TaskForm from './TaskForm'
 import React, {useState} from "react"
 
-function TaskDetails({tasks, dayId}) {
-    const [allTasks, setAllTasks] = useState(tasks)
+function TaskDetails({description, status, id}) {
+    const [showStatus, setShowStatus] = useState(status)
 
-    // console.log(allTasks)
+    function handleStatus() {
 
-    function handleAddTask(newTask) {
-        const newTaskList = [...allTasks, newTask ]
-        setAllTasks(newTaskList)
+        setShowStatus(!showStatus)
+
+        const updatedStatus = {
+            complete: !showStatus
+        }
+
+        fetch(`http://localhost:3000/tasks/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedStatus)
+        })  .then(res => res.json())
+            .then(data => console.log(data))
     }
-   
-
-    const taskItems = allTasks.map((task) => {
-        return (
-            <div>
-                <i className="circle outline icon" />
-                <span>{task.description}</span>
-            </div>
-            
-        )
-    })
     
     return (
-        <div>
-            <h3>To Do:</h3>
-            <TaskForm tasks={tasks} dayId={dayId} setAllTasks={handleAddTask}/>
+        <>
             <div>
-                {taskItems}
+            {showStatus ? <i onClick={handleStatus} className="circle icon" /> : <i onClick={handleStatus} className="circle outline icon" />}
+            {description}
             </div>
-        </div>
+           
+        </>
 
     )
 }

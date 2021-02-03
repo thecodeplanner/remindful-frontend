@@ -1,34 +1,37 @@
 
 import React, {useState} from "react"
-import SelfcareForm from './SelfcareForm'
 
-function SelfcareDetails({selfcare, dayId}) {
-    const [allSelfcareItems, setAllSelfcareItems] = useState(selfcare)
+function SelfcareDetails({description, status, id}) {
+    const [showStatus, setShowStatus] = useState(status)
 
+    function handleStatus() {
+        setShowStatus(!showStatus)
 
-    const selfcareItems = allSelfcareItems.map((selfcare) => {
-        return (
-            <div>
-                <i className="heart outline icon" />
-                <span>{selfcare.description}</span>
-            </div>
-            
-        )
-    })
+        const updatedStatus = {
+            complete: !showStatus
+        }
 
+        fetch(`http://localhost:3000/selfcares/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedStatus)
+        })  .then(res => res.json())
+            .then(data => console.log(data))
 
-    function handleSelfcare(newSelfcare) {
-        const newSelfcareList = [...allSelfcareItems, newSelfcare]
-        setAllSelfcareItems(newSelfcareList)
     }
+
+    
+    
     return (
-        <div>
-            <h3>Selfcare Checklist:</h3> 
-            <SelfcareForm dayId={dayId} setAllSelfcare={handleSelfcare} />
-            <div>
-                {selfcareItems}
-            </div>
-        </div>
+      <>
+      <div>
+          {showStatus ? <i onClick={handleStatus} className="heart icon" /> : <i onClick={handleStatus} className="heart outline icon" />}
+          {description}
+      </div>
+
+      </>
 
     )
 }

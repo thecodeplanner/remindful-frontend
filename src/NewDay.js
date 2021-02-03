@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react"
+import TaskDetails from './TaskDetails'
+import SelfcareDetails from './SelfcareDetails'
 import TaskForm from './TaskForm'
 import SelfcareForm from './SelfcareForm'
 import { useParams } from "react-router-dom";
@@ -11,7 +13,6 @@ function NewDay() {
     const [mood, setMood] = useState(null)
     const [water, setWater] = useState(null)
     const [tasks, setTasks] = useState(null)
-    const [taskStatus, setTaskStatus] = useState(null)
     const [selfcare, setSelfcare] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -38,19 +39,13 @@ function NewDay() {
 
     const taskItems = tasks.map((task) => {
         return (
-            <div>
-                <i className="circle outline icon" />
-                <span>{task.description}</span>
-            </div>
+            <TaskDetails key={task.id} description={task.description} status={task.complete} id={task.id}/>
         )
     })
 
     const selfcareItems = selfcare.map((selfcare) => {
         return (
-            <div>
-                <i className="heart outline icon" />
-                <span>{selfcare.description}</span>
-            </div>
+            <SelfcareDetails key={selfcare.id} description={selfcare.description} status={selfcare.complete} id={selfcare.id} />
         )
     })
 
