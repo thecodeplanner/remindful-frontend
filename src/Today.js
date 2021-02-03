@@ -18,6 +18,9 @@ function Today({days}) {
     if (findToday.length === 0) {
         alert("Please create a new entry!")
         history.push('/calendar')    
+    }else if (findToday.length === 1) {
+        const dayId = (findToday[0].id)
+        history.push(`/day/${dayId}`)
     }
 
     console.log(findToday)
