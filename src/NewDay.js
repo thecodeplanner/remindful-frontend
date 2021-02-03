@@ -9,6 +9,7 @@ function NewDay() {
     const [day, setDay] = useState(null);
     const [entry, setEntry] = useState(null)
     const [mood, setMood] = useState(null)
+    const [water, setWater] = useState(null)
     const [tasks, setTasks] = useState(null)
     const [selfcare, setSelfcare] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
@@ -25,6 +26,7 @@ function NewDay() {
                 setDay(day)
                 setEntry(day.entry)
                 setMood(day.mood)
+                setWater(day.water_intake)
                 setTasks(day.tasks)
                 setSelfcare(day.selfcares)
                 setIsLoaded(true)
@@ -71,6 +73,25 @@ function NewDay() {
         setIsEditingMood(false)
     }
 
+    function handleUpdateWater() {
+        const updateWater = {
+            water_intake: day.water_intake += 1
+        }
+
+        // console.log(updateWater)
+
+        fetch(`http://localhost:3000/days/${day.id}`, {
+            method: "PATCH", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateWater)
+        })
+            .then(res => res.json())
+            .then(waterData => setWater(waterData.water_intake))
+
+    }
+
 
     return (
         <div className='main-page-container'>
@@ -103,7 +124,11 @@ function NewDay() {
             </div>
 
             <div className='water'>
-                Water Intake: {day.water} 
+                <button className='update-water' onClick={handleUpdateWater}>
+                    <i className='tint icon' />
+                </button>
+               
+                Water Intake for Today: {water} oz.
             </div>
 
             <div className='to-do'>
