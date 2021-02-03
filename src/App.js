@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import Navbar from './Navbar'
 import Home from './Home'
 import Login from './Login'
@@ -9,8 +9,6 @@ import Profile from './Profile'
 import NewDay from './NewDay'
 import Days from './Days'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-
-
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -29,7 +27,7 @@ function App() {
   return (
     <div>
      <Router>
-       <Navbar />
+       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
        <Switch>
          <Route exact path ="/">
            <Home />

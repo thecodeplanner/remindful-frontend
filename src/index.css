@@ -18,6 +18,10 @@ code {
   justify-content: center;
 }
 
+.navbar li {
+  display: inline-block;
+  padding: 15px;
+}
 
 
 .signin-buttons {

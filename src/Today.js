@@ -1,8 +1,8 @@
 import React from "react"
 import { format } from 'date-fns'
-import DayDetails from './DayDetails'
-import TaskDetails from './TaskDetails'
-import SelfcareDetails from './SelfcareDetails'
+// import DayDetails from './DayDetails'
+// import TaskDetails from './TaskDetails'
+// import SelfcareDetails from './SelfcareDetails'
 import { useHistory } from "react-router-dom";
 
 function Today({days}) {
@@ -23,33 +23,33 @@ function Today({days}) {
         history.push(`/day/${dayId}`)
     }
 
-    console.log(findToday)
+    // console.log(findToday)
 
-    const todayDetails = findToday.map((today) => {
-        return (
-            <DayDetails key={today.id} today={today}/>
-        )
-    })
+    // const todayDetails = findToday.map((today) => {
+    //     return (
+    //         <DayDetails key={today.id} today={today}/>
+    //     )
+    // })
 
-    const todayTasks = findToday.map((today) => {
-        return (
-            <TaskDetails key={today.tasks} tasks={today.tasks} dayId={today.id}/>
-        )
-    })
+    // const todayTasks = findToday.map((today) => {
+    //     return (
+    //         <TaskDetails key={today.tasks} tasks={today.tasks} dayId={today.id}/>
+    //     )
+    // })
 
-    const todaySelfcare = findToday.map((today) => {
-        return (
-            <SelfcareDetails key={today.date} selfcare={today.selfcares} dayId={today.id} />
-        )
-    })
+    // const todaySelfcare = findToday.map((today) => {
+    //     return (
+    //         <SelfcareDetails key={today.date} selfcare={today.selfcares} dayId={today.id} />
+    //     )
+    // })
     
 
 
     return (
         <div>
-        {todayDetails}
-        {todayTasks}
-        {todaySelfcare}
+    {/* //     {todayDetails}
+    //     {todayTasks}
+    //     {todaySelfcare} */}
         </div>
     )
 }
