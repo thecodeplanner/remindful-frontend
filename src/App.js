@@ -6,6 +6,8 @@ import Signup from './Signup'
 import CalendarPage from './CalendarPage'
 import Today from './Today'
 import Profile from './Profile'
+import NewDay from './NewDay'
+import Days from './Days'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 
@@ -39,13 +41,19 @@ function App() {
            <Signup setCurrentUser={setCurrentUser}/>
          </Route>
          <Route exact path='/calendar'>
-           <CalendarPage days={days}/>
+           <CalendarPage days={days} currentUser={currentUser} />
          </Route>
          <Route exact path='/today'>
            <Today currentUser={currentUser} days={days} setDays={setDays} />
          </Route>
          <Route exact path='/profile'>
            <Profile currentUser={currentUser} />
+         </Route>
+         <Route exact path='/entries'>
+           <Days days={days} />
+         </Route>
+         <Route exact path='/day/:id'>
+           <NewDay  />
          </Route>
        </Switch>
      </Router>

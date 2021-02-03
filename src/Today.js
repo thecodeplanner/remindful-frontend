@@ -1,15 +1,12 @@
-import React, {useState} from "react"
+import React from "react"
 import { format } from 'date-fns'
 import DayDetails from './DayDetails'
 import TaskDetails from './TaskDetails'
 import SelfcareDetails from './SelfcareDetails'
+import { useHistory } from "react-router-dom";
 
-function Today({days, setDays, currentUser}) {
-    // const [dayDetails, setDayDetails] = useState(null)
-
-    // const [tasks, setTasks] = useState(null)
-
-
+function Today({days}) {
+    const history = useHistory()
 
     const today = new Date()
     const formattedDate = format(today, 'yyyy-MM-dd')
@@ -18,8 +15,11 @@ function Today({days, setDays, currentUser}) {
         return day.date === `${formattedDate}`
     })
 
-    // console.log(formattedDate)
-    // console.log(days)
+    if (findToday.length === 0) {
+        alert("Please create a new entry!")
+        history.push('/calendar')    
+    }
+
     console.log(findToday)
 
     const todayDetails = findToday.map((today) => {
@@ -33,8 +33,6 @@ function Today({days, setDays, currentUser}) {
             <TaskDetails key={today.tasks} tasks={today.tasks} dayId={today.id}/>
         )
     })
-
-    // console.log(tasks)
 
     const todaySelfcare = findToday.map((today) => {
         return (

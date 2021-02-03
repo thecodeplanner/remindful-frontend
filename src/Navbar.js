@@ -14,6 +14,10 @@ function Navbar() {
             </NavLink>
             <NavLink to="/profile">
                 <li>profile</li>
+            <NavLink to="/entries">
+                <li>all entries</li>
+            </NavLink>
+
             </NavLink>
             {/* need logout button */}
 

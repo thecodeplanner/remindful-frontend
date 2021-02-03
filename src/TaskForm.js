@@ -1,7 +1,7 @@
 
 import React, {useState} from "react"
 
-function TaskForm({tasks, dayId, setAllTasks}) {
+function TaskForm({dayId, setAllTasks}) {
     const [description, setDescription] = useState('')
 
     // const dayId = tasks.filter((task) => task.day_id)
@@ -34,7 +34,7 @@ function TaskForm({tasks, dayId, setAllTasks}) {
         <form onSubmit={handleSubmit}>
             <input
             type="text"
-            placeholder='anything else?'
+            placeholder="let's get it done!"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             />
