@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 import { useHistory } from "react-router-dom";
 
 function DayCard({day}) {

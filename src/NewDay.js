@@ -11,6 +11,7 @@ function NewDay() {
     const [mood, setMood] = useState(null)
     const [water, setWater] = useState(null)
     const [tasks, setTasks] = useState(null)
+    const [taskStatus, setTaskStatus] = useState(null)
     const [selfcare, setSelfcare] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -108,8 +109,6 @@ function NewDay() {
                     </button>
                 </div>
 
-
-
             </div>
 
             <div className='mood'>
@@ -124,11 +123,10 @@ function NewDay() {
             </div>
 
             <div className='water'>
+                Water Intake for Today: {water} oz.
                 <button className='update-water' onClick={handleUpdateWater}>
                     <i className='tint icon' />
                 </button>
-               
-                Water Intake for Today: {water} oz.
             </div>
 
             <div className='to-do'>
