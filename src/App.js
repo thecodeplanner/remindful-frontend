@@ -6,7 +6,7 @@ import Signup from './Signup'
 import CalendarPage from './CalendarPage'
 import Today from './Today'
 import Profile from './Profile'
-import NewDay from './NewDay'
+import DayDetails from './DayDetails'
 import Days from './Days'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -14,15 +14,19 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [days, setDays] = useState(null)
 
-  // console.log(currentUser)
 
   if (!days && currentUser) {
       fetch(`http://localhost:3000/users/${currentUser.id}`)
         .then(res => res.json())
         .then(data => setDays(data.days))
   }
-  
-  // console.log(days)
+
+  function handleDelete(id) {
+    const updatedDays = days.filter((day) => {
+      return day.id !== id
+    })
+      setDays(updatedDays)
+  }
 
   return (
     <div>
@@ -48,10 +52,10 @@ function App() {
            <Profile currentUser={currentUser} />
          </Route>
          <Route exact path='/entries'>
-           <Days days={days} />
+           <Days days={days} onDelete={handleDelete}/>
          </Route>
          <Route exact path='/day/:id'>
-           <NewDay  />
+           <DayDetails  />
          </Route>
        </Switch>
      </Router>

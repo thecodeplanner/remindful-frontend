@@ -1,10 +1,10 @@
 import DayCard from './DayCard'
 
-function Days({days}) {
+function Days({days, onDelete}) {
 
     const day = days.map((day) => {
         return (
-            <DayCard key={day.id} day={day} />
+            <DayCard key={day.id} day={day} onDelete={onDelete}/>
         )
     })
 

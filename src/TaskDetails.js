@@ -17,8 +17,9 @@ function TaskDetails({description, status, id}) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(updatedStatus)
-        })  .then(res => res.json())
-            .then(data => console.log(data))
+        })  
+            // .then(res => res.json())
+            // .then(data => console.log(data))
     }
     
     return (
