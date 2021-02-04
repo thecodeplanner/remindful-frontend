@@ -21,11 +21,10 @@ function DayCard({day, onDelete}) {
 
         onDelete(day.id)
 
-        
     }
 
     return (
-        <div>
+        <div className='day-card'>
             <span onClick={handleDate}>
                 {day.date}
             </span>

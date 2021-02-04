@@ -1,7 +1,7 @@
 
 import React, {useState} from "react"
 
-function SelfcareDetails({description, status, id}) {
+function SelfcareDetails({description, status, id, onDelete}) {
     const [showStatus, setShowStatus] = useState(status)
 
     function handleStatus() {
@@ -23,6 +23,14 @@ function SelfcareDetails({description, status, id}) {
 
     }
 
+    function handleDelete() {
+        fetch(`http://localhost:3000/selfcares/${id}`, {
+                method: "DELETE"
+            })
+
+        onDelete(id)
+    }
+
     
     
     return (
@@ -30,6 +38,7 @@ function SelfcareDetails({description, status, id}) {
       <div>
           {showStatus ? <i onClick={handleStatus} className="heart icon" /> : <i onClick={handleStatus} className="heart outline icon" />}
           {description}
+          {showStatus ? <i onClick={handleDelete} className='window close outline icon'/> : null}
       </div>
 
       </>

@@ -222,3 +222,8 @@ div:hover .actions {
   cursor: pointer;
   color: #a9d4ff;
 }
+
+.day-card {
+  cursor: pointer;
+}
+

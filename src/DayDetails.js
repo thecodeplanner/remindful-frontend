@@ -39,13 +39,13 @@ function NewDay() {
 
     const taskItems = tasks.map((task) => {
         return (
-            <TaskDetails key={task.id} description={task.description} status={task.complete} id={task.id}/>
+            <TaskDetails key={task.id} description={task.description} status={task.complete} id={task.id} onDelete={handleDeleteTask}/>
         )
     })
 
     const selfcareItems = selfcare.map((selfcare) => {
         return (
-            <SelfcareDetails key={selfcare.id} description={selfcare.description} status={selfcare.complete} id={selfcare.id} />
+            <SelfcareDetails key={selfcare.id} description={selfcare.description} status={selfcare.complete} id={selfcare.id} onDelete={handleDeleteSelfcare}/>
         )
     })
 
@@ -69,12 +69,10 @@ function NewDay() {
         setIsEditingMood(false)
     }
 
-    function handleUpdateWater() {
+    function handleUpdateWaterEight() {
         const updateWater = {
-            water_intake: day.water_intake += 1
+            water_intake: day.water_intake += 8
         }
-
-        // console.log(updateWater)
 
         fetch(`http://localhost:3000/days/${day.id}`, {
             method: "PATCH", 
@@ -87,6 +85,37 @@ function NewDay() {
             .then(waterData => setWater(waterData.water_intake))
 
     }
+
+    function handleUpdateWaterSixteen() {
+        const updateWater = {
+            water_intake: day.water_intake += 16
+        }
+
+        fetch(`http://localhost:3000/days/${day.id}`, {
+            method: "PATCH", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateWater)
+        })
+            .then(res => res.json())
+            .then(waterData => setWater(waterData.water_intake))
+
+    }
+
+    function handleDeleteTask(id) {
+        const updatedTasks = tasks.filter((task) => {
+            return task.id !== id
+        }) 
+        setTasks(updatedTasks)
+    }
+
+    function handleDeleteSelfcare(id) {
+        const updatedSelfcare = selfcare.filter((sc) => {
+            return sc.id !== id
+        })
+        setSelfcare(updatedSelfcare)
+    }   
 
 
     return (
@@ -119,9 +148,15 @@ function NewDay() {
 
             <div className='water'>
                 Water Intake for Today: {water} oz.
-                <button className='update-water' onClick={handleUpdateWater}>
-                    <i className='tint icon' />
-                </button>
+                <div>
+                    <button className='update-water' onClick={handleUpdateWaterEight}>
+                        <i className='tint icon'/> + 8 oz.
+                    </button>
+                    <button className='update-water' onClick={handleUpdateWaterSixteen}>
+                        <i className='tint icon'/> + 16 oz.
+                    </button>
+                </div>
+              
             </div>
 
             <div className='to-do'>
