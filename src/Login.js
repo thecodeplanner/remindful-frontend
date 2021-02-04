@@ -1,8 +1,8 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 
 
-function Login({setCurrentUser}) {
+function Login({ setCurrentUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory()
@@ -14,40 +14,64 @@ function Login({setCurrentUser}) {
         })
             .then((res) => res.json())
             .then(setCurrentUser)
-        return(
+        return (
             history.push('/calendar')
         )
     }
 
-    return(
-    <div>      
-        <form className="login-form" onSubmit={handleSubmit}>
-            <h2>Login</h2>
-            <label htmlFor="username">username</label>
-            <br></br>
-            <input
-            type="text"
-            // id="username"
-            // autoComplete="off"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            />
-            <br></br>
-            <br></br>
-            <label htmlFor="password">password</label>
-            <br></br>
-            <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            // autoComplete="current-password"
-            />
-            <br></br>
-            <br></br>
-            <input className="button" type="submit" value="login" />
-        </form>
-    </div>
+    return (
+        <div className='ui raised segment centered' >
+            <a class="ui blue right ribbon label">login</a>
+            <div className='ui three column centered grid'>
+                <div className='column'>
+                   
+                    <h2>welcome back!</h2>
+                    <div className='ui form'>
+                        <form className="login-form" onSubmit={handleSubmit}>
+                            <div className='field'>
+                                <input
+                                    type="text"
+                                    placeholder="username"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                />
+                            </div>
+
+
+                            <div className='field'>
+                                <input
+                                    type="password"
+                                    placeholder="password"
+                                    id="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                // autoComplete="current-password"
+                                />
+                            </div>
+
+                            <input className="ui button" type="submit" value="login" />
+                        </form>
+
+                       
+                   
+
+
+
+                    </div>
+                    
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
 
     )
 }

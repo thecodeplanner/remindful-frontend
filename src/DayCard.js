@@ -37,7 +37,7 @@ function DayCard({day, onDelete}) {
 
     return (
        
-        <div className='day-card card' style={{backgroundColor: '#fefdca'}}>
+        <div className='card' id='day-card' style={{backgroundColor: '#fefdca'}}>
             <span onClick={handleDate}>
                 {day.date}                
             </span>

@@ -146,7 +146,7 @@ function NewDay() {
             {/* GRATIFICATION DIV */}
             <div className='column'>
                 <div className=' ui raised segment' style={{ backgroundColor: '#e0f9b5' }}>
-                    <a class="ui olive right ribbon label">gratification</a>
+                    <a class="ui olive right ribbon label"><i className='thumbtack icon'></i>gratification</a>
                     <h3>Today I'm grateful for ...</h3>
 
                     <button className='clear-button pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
@@ -161,7 +161,7 @@ function NewDay() {
                     <div className="column" >
                         <div className='ui raised segment' style={{ backgroundColor: '#fefdca' }}>
 
-                            <a class="ui yellow ribbon label">priorities</a>
+                            <a class="ui yellow ribbon label"><i className='bookmark icon'></i>priorities</a>
                             <h3>To Do</h3>
                             {taskItems}
                             <TaskForm setAllTasks={handleAddTask} dayId={day.id} />
@@ -170,7 +170,7 @@ function NewDay() {
                         {/* MOOD DIV */}
 
                         <div className='ui raised segment' style={{ backgroundColor: '#a5dee5' }}>
-                            <a class="ui teal ribbon label">mood</a>
+                            <a class="ui teal ribbon label"><i className='smile outline icon'></i>mood</a>
                             <h4> How I'm feeling</h4>
 
                             <button className='clear-button pencil' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
@@ -187,7 +187,7 @@ function NewDay() {
                         {/* WATER DIV */}
 
                         <div className='ui raised segment'>
-                            <a class="ui blue right ribbon label">daily water intake</a>
+                            <a class="ui blue right ribbon label"><i className='tint icon' />daily water intake</a>
                             <h4>I drank {water} oz. of water today</h4>
                             <div>
                                 <button className='update-water' onClick={handleUpdateWaterEight}>
@@ -202,7 +202,7 @@ function NewDay() {
                         {/* SELFCARE DIV */}
 
                         <div className='ui raised segment' style={{ backgroundColor: '#ffcfdf' }}>
-                            <a class="ui pink right ribbon label">mindfulness</a>
+                            <a class="ui pink right ribbon label"><i className='heart icon'></i>mindfulness  </a>
                             <h3>Self-Care Checklist</h3>
                             {selfcareItems}
                             <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />

@@ -26,7 +26,10 @@ function Navbar({ currentUser, setCurrentUser }) {
                         <li>profile</li>
                     </NavLink>
                     <li onClick={handleLogout}>logout</li>
-                </> : null
+                </> : 
+                    <NavLink to="/">
+                    <li> remindful </li>
+                    </NavLink>
             }
 
             {/* need logout button */}
@@ -37,3 +40,4 @@ function Navbar({ currentUser, setCurrentUser }) {
 }
 
 export default Navbar
+

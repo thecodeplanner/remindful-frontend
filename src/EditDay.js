@@ -22,7 +22,9 @@ function EditDay({dayEntry, id, onUpdateEntry}) {
       }
 
     return (
-        <form className="edit-entry" onSubmit={handleFormSubmit}>
+        <div className='ui form'>
+            <form className="fields" onSubmit={handleFormSubmit}>
+            <div className='field'>
             <input
                 type="text"
                 name="entry"
@@ -30,8 +32,14 @@ function EditDay({dayEntry, id, onUpdateEntry}) {
                 value={entry}
                 onChange={(e) => setEntry(e.target.value)}
             />
-            <input type="submit" value="update" />
-    </form>
+            </div>
+            <input className='ui button' type="submit" value="update" />
+            </form>
+
+
+
+        </div>
+        
     )
 }
 

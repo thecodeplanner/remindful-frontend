@@ -34,7 +34,7 @@ function SelfcareForm({dayId, setAllSelfcare}) {
                 <div className='field'>
                     <input 
                     type="text"
-                    placeholder='reminder to care for yourself!'
+                    placeholder='be mindful of balance'
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     />

@@ -7,7 +7,7 @@ function CalendarPage({ days, currentUser }) {
     const [date, setDate] = useState(new Date())
     const [showForm, setShowForm] = useState(false)
 
-    const today = format(date, 'iiii, MMMM do')
+    const today = format(date, 'iiii, MMMM do, yyyy')
 
     // console.log(chosenDay)
 
@@ -28,7 +28,7 @@ function CalendarPage({ days, currentUser }) {
 
 
     return (
-        <div>
+        <div className='ui raised segment'>
             <div>
                 <h1> {today} </h1>
 

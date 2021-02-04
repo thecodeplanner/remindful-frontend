@@ -169,7 +169,7 @@ code {
 /* Main Page Layout */
 
 
-
+/* clear background for button */
 .clear-button {
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
@@ -180,19 +180,18 @@ code {
   color: #919394;
 }
 
-div .actions {
-  /* display: inline-block; */
+/* div .actions {
+
   position: relative;
   top: 0;
   transform: translateY(-50%);
   left: 15rem;
-  /* float: right; */
   display: none;
 }
 
 div:hover .actions {
   display: block;
-}
+} */
 
 .update-water {
   padding: 0.1rem 0.2rem;
@@ -204,8 +203,9 @@ div:hover .actions {
   color: #a9d4ff;
 }
 
-.day-card {
+#day-card {
   cursor: pointer;
+  /* height: 300px; */
 }
 
 
