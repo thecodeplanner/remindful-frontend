@@ -4,6 +4,15 @@ function Profile({currentUser}) {
 
     function handleEdit() {
         console.log('edit profile')
+        return(
+            <div className="ui active modal">
+                <form>
+                    <input type="text"></input>
+                </form>
+        </div>
+        )
+
+        
     }
 
     return (
@@ -13,8 +22,11 @@ function Profile({currentUser}) {
             <h3>Name: {(currentUser.first_name) + ' ' + (currentUser.last_name)} </h3>
             <h4>Username: {currentUser.username}</h4>
             <h4>Days Logged: {currentUser.days.length} days</h4>
-            <button onClick={handleEdit}>Edit Profile</button>        
-        </div>
+            <button onClick={handleEdit}>Edit Profile</button>
+            
+            </div>
+        
+        
         
     )
 }

@@ -31,15 +31,20 @@ function TaskForm({dayId, setAllTasks}) {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <input
-            type="text"
-            placeholder="let's get it done!"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            />
-            <input className="button" type="submit" value="add" />
-        </form>
+        <div className='ui form'>   
+            <form onSubmit={handleSubmit} className='fields'>
+                <div className='field'>
+                <input
+                type="text"
+                placeholder="let's get it done!"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                />
+                </div>
+                <input className=" ui button" type="submit" value="add" />
+            </form>
+        </div>
+        
     )
 }
 

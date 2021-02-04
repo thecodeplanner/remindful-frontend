@@ -11,7 +11,7 @@ function Days({days, onDelete}) {
     return (
         <div>
              <h1>All Entries</h1>
-            <div>
+            <div className='ui cards'>
                 {day}
             </div>
         </div>

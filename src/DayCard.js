@@ -24,14 +24,15 @@ function DayCard({day, onDelete}) {
     }
 
     return (
-        <div className='day-card'>
+        <div className='day-card card'>
             <span onClick={handleDate}>
                 {day.date}
             </span>
-
-            <button className="clear-button" onClick={handleDelete}>
-                <i className="trash alternate outline icon" />
-            </button>
+                <button className="clear-button" onClick={handleDelete}>
+                    <i className="trash alternate outline icon" />
+                </button>
+            
+            
 
         </div>
         

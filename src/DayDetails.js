@@ -39,13 +39,13 @@ function NewDay() {
 
     const taskItems = tasks.map((task) => {
         return (
-            <TaskDetails key={task.id} description={task.description} status={task.complete} id={task.id} onDelete={handleDeleteTask}/>
+            <TaskDetails key={task.id} description={task.description} status={task.complete} id={task.id} onDelete={handleDeleteTask} />
         )
     })
 
     const selfcareItems = selfcare.map((selfcare) => {
         return (
-            <SelfcareDetails key={selfcare.id} description={selfcare.description} status={selfcare.complete} id={selfcare.id} onDelete={handleDeleteSelfcare}/>
+            <SelfcareDetails key={selfcare.id} description={selfcare.description} status={selfcare.complete} id={selfcare.id} onDelete={handleDeleteSelfcare} />
         )
     })
 
@@ -75,7 +75,7 @@ function NewDay() {
         }
 
         fetch(`http://localhost:3000/days/${day.id}`, {
-            method: "PATCH", 
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -92,7 +92,7 @@ function NewDay() {
         }
 
         fetch(`http://localhost:3000/days/${day.id}`, {
-            method: "PATCH", 
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -106,7 +106,7 @@ function NewDay() {
     function handleDeleteTask(id) {
         const updatedTasks = tasks.filter((task) => {
             return task.id !== id
-        }) 
+        })
         setTasks(updatedTasks)
     }
 
@@ -115,62 +115,78 @@ function NewDay() {
             return sc.id !== id
         })
         setSelfcare(updatedSelfcare)
-    }   
+    }
 
 
     return (
-        <div className='main-page-container'>
+        <div className='main-page-container ui raised segment'>
             <h2>Date: {day.date} </h2>
 
-            <div className='grateful'>
-                <h3>I'm grateful for ...</h3>
+            <div className='to-do ui two column grid'>
+                <div className="column" >
+                    <div className='ui raised segment'>
 
-                {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div> {entry} </div>}
-
-                <div className="actions">
-                    <button className='clear-button' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
-                        <i className="pencil alternate icon" />
-                    </button>
+                        <a class="ui red ribbon label">Priorities</a>
+                        <h3>To Do:</h3>
+                        {taskItems}
+                        <TaskForm setAllTasks={handleAddTask} dayId={day.id} />
+                    </div>
                 </div>
+                <div className='grateful' column>
+                    <div className=' ui raised segment'>
+                    <a class="ui orange right ribbon label">Thoughts</a>
+                        <h3>Today I'm grateful for ...</h3>
 
-            </div>
+                        {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div> {entry} </div>}
 
-            <div className='mood'>
+                        <div className="actions">
+                            <button className='clear-button' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
+                                <i className="pencil alternate icon" />
+                            </button>
+                        </div>
 
-                {isEditingMood ? <EditMood dayMood={mood} id={day.id} onUpdateMood={handleUpdateMood} /> : <p>Mood: {mood}</p>}
+                        <div className='mood'>
 
-                <div className="actions">
-                    <button className='clear-button' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
-                        <i className="pencil alternate icon" />
-                    </button>
+                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} onUpdateMood={handleUpdateMood} /> : <p>Mood: {mood}</p>}
+
+                            <div className="actions">
+                                <button className='clear-button' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
+                                    <i className="pencil alternate icon" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className='ui raised segment'>
+                        <a class="ui blue right ribbon label">Water Intake</a>
+                            <h4>I drank {water} oz. of water today</h4>
+                        <div>
+                                <button className='update-water' onClick={handleUpdateWaterEight}>
+                                    <i className='tint icon' /> + 8 oz.
+                                </button>
+                                <button className='update-water' onClick={handleUpdateWaterSixteen}>
+                                    <i className='tint icon' /> + 16 oz.
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
                 </div>
             </div>
 
-            <div className='water'>
-                Water Intake for Today: {water} oz.
-                <div>
-                    <button className='update-water' onClick={handleUpdateWaterEight}>
-                        <i className='tint icon'/> + 8 oz.
-                    </button>
-                    <button className='update-water' onClick={handleUpdateWaterSixteen}>
-                        <i className='tint icon'/> + 16 oz.
-                    </button>
-                </div>
-              
-            </div>
 
-            <div className='to-do'>
-                <h3>To Do:</h3>
-                <TaskForm setAllTasks={handleAddTask} dayId={day.id} />
-                {taskItems}
 
-            </div>
+
+
 
 
             <div className='selfcare'>
-                <h3>Selfcare Checklist</h3>
-                <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />
+                <h3>Self-Care Checklist</h3>
                 {selfcareItems}
+                <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />
+
             </div>
 
 

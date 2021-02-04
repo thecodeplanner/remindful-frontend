@@ -3,7 +3,7 @@ import AddDay from './AddDay'
 import Calendar from 'react-calendar';
 import { format } from 'date-fns';
 
-function CalendarPage({days, currentUser}) {
+function CalendarPage({ days, currentUser }) {
     const [date, setDate] = useState(new Date())
     const [showForm, setShowForm] = useState(false)
 
@@ -26,27 +26,33 @@ function CalendarPage({days, currentUser}) {
         setShowForm(!showForm)
     }
 
-    
+
     return (
         <div>
-             <div>
+            <div>
                 <h1> {today} </h1>
-                <button onClick={showAddDayForm}>start new entry</button>
+
+                <div class="ui blue labeled icon button" onClick={showAddDayForm}>
+                    new entry
+                <i class="add icon"></i>
+                </div>
                 {showForm ? <AddDay currentUser={currentUser} /> : null}
-            </div> 
-            
+                {/* <button onClick={showAddDayForm}>start new entry</button>
+                {showForm ? <AddDay currentUser={currentUser} /> : null} */}
+            </div>
+
             <div className='container'>
                 <Calendar
-                value={date}
-                onChange={handleChangeDate}
+                    value={date}
+                    onChange={handleChangeDate}
                 />
             </div>
-        
-           
-        </div>
-         
 
-        
+
+        </div>
+
+
+
     )
 }
 

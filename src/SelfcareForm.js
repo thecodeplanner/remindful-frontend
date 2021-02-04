@@ -29,15 +29,21 @@ function SelfcareForm({dayId, setAllSelfcare}) {
     
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-            type="text"
-            placeholder='reminder to care for yourself!'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            />
-            <input className="button" type="submit" value="add" />
-        </form>
+        <div className='ui form'>
+            <form onSubmit={handleSubmit} className='fields'>
+                <div className='field'>
+                    <input 
+                    type="text"
+                    placeholder='reminder to care for yourself!'
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    />
+                </div>
+                <input className="ui button" type="submit" value="add" />
+            </form>
+
+        </div>
+        
     )
 
 }
