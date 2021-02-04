@@ -13,20 +13,23 @@ function Home() {
     }
 
     return (
-        <>
-        <div id="home-page">
-            <img src="remindful.png" alt="remindful-logo"/>
-        </div>
-        <div className="signin-buttons">
-            <div>
-                <button onClick={handleLogin} >login</button>
-                <button onClick={handleSignup} >sign up</button>
+        <div className='ui raised segment'>
+
+            <div id="home-page">
+                <img src="remindful.png" alt="remindful-logo" />
             </div>
+            
+            <div className="signin-buttons">
+
+                <div class="ui medium buttons">
+                    <button class="ui button" onClick={handleLogin}>login</button>
+                    <div class="or"></div>
+                    <button class="ui button" onClick={handleSignup}>sign up</button>
+                </div>
+
+            </div>
+
         </div>
-        
-        
-       
-        </>
     )
 
 }

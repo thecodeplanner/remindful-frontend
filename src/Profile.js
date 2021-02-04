@@ -1,22 +1,19 @@
 import React from "react"
+import EditProfileForm from './EditProfileForm'
 
 function Profile({currentUser}) {
 
     function handleEdit() {
-        console.log('edit profile')
         return(
-            <div className="ui active modal">
-                <form>
-                    <input type="text"></input>
-                </form>
-        </div>
+            <EditProfileForm currentUser={currentUser}/>
+    
         )
 
         
     }
 
     return (
-        <div>
+        <div className='ui raised segment'>
             <h1> My Profile</h1>
             <img className="profile-img" src={currentUser.image} alt='profile'/>
             <h3>Name: {(currentUser.first_name) + ' ' + (currentUser.last_name)} </h3>

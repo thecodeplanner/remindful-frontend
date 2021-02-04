@@ -6,15 +6,19 @@ import SelfcareForm from './SelfcareForm'
 import { useParams } from "react-router-dom";
 import EditDay from './EditDay';
 import EditMood from './EditMood';
+// import { format } from 'date-fns';
+// import { parseISO } from 'date-fns' 
 
 function NewDay() {
     const [day, setDay] = useState(null);
+    const [date, setDate] = useState(null)
     const [entry, setEntry] = useState(null)
     const [mood, setMood] = useState(null)
     const [water, setWater] = useState(null)
     const [tasks, setTasks] = useState(null)
     const [selfcare, setSelfcare] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
+   
 
     const [isEditingEntry, setIsEditingEntry] = useState(false)
     const [isEditingMood, setIsEditingMood] = useState(false)
@@ -26,6 +30,7 @@ function NewDay() {
             .then(r => r.json())
             .then((day) => {
                 setDay(day)
+                formatDate(day.date)
                 setEntry(day.entry)
                 setMood(day.mood)
                 setWater(day.water_intake)
@@ -36,6 +41,26 @@ function NewDay() {
     }, [params.id])
 
     if (!isLoaded) return <h2>Loading...</h2>;
+
+
+    function formatDate(date) {
+        let formattedDate = new Date(date.split('-'))
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+        return  setDate(formattedDate.toLocaleDateString('en-US', options))
+    }
+
+    // console.log(date)
+    // formatDate(date)
+
+    // const testDate = (day.date).replace(/-/g, '/')
+    // const parse = parseISO(testDate.toLocaleString())
+    //  console.log(parse)
+    // const formatDate = format((testDate), 'MM//dd/yyy')
+
+
+
+
+
 
     const taskItems = tasks.map((task) => {
         return (
@@ -117,10 +142,11 @@ function NewDay() {
         setSelfcare(updatedSelfcare)
     }
 
+ 
 
     return (
         <div className='ui raised segment'>
-            <h2>Date: {day.date} </h2>
+            <h2> {date} </h2>
 
             {/* GRATIFICATION DIV */}
             <div className='column'>
