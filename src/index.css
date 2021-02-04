@@ -167,29 +167,8 @@ code {
 }
 
 /* Main Page Layout */
-.main-page-container {
-  border: solid blue 3px;
-}
 
-.grateful {
-  border: solid black 1px;
-}
 
-.mood {
-  border: solid black 1px;
-}
-
-.water {
-  border: solid black 1px;
-}
-
-.to-do {
-  border: solid black 1px;
-}
-
-.selfcare {
-  border: solid black 1px;
-}
 
 .clear-button {
   padding: 0.1rem 0.2rem;
