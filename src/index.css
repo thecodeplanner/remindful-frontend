@@ -177,7 +177,7 @@ code {
   background-color: var(--bg-color-2);
   margin: 0 0.25rem;
   cursor: pointer;
-  color: #a9d4ff;
+  color: #919394;
 }
 
 div .actions {
@@ -186,6 +186,7 @@ div .actions {
   top: 0;
   transform: translateY(-50%);
   left: 15rem;
+  /* float: right; */
   display: none;
 }
 
@@ -249,4 +250,25 @@ div:hover .actions {
   left: -65px;
   box-shadow: 0px -7px 6px -9px black;
   transform: rotate(135deg);
+}
+
+
+/* clear to do and selfcare list buttons */
+
+#x-icon {
+  float: right;
+  cursor: pointer;
+  color: #919394;
+}
+
+#x-selfcare {
+  float: right;
+  cursor: pointer;
+  color: #919394;
+}
+
+/* edit button to float right  */
+
+.pencil {
+  float: right;
 }

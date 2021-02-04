@@ -9,9 +9,9 @@ function Days({days, onDelete}) {
     })
 
     return (
-        <div>
+        <div className='ui raised segment'style={{backgroundColor: '#e0f9b5'}}>
              <h1>All Entries</h1>
-            <div className='ui cards'>
+            <div className='ui cards centered'>
                 {day}
             </div>
         </div>

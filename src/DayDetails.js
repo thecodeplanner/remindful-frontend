@@ -6,8 +6,7 @@ import SelfcareForm from './SelfcareForm'
 import { useParams } from "react-router-dom";
 import EditDay from './EditDay';
 import EditMood from './EditMood';
-// import { format } from 'date-fns';
-// import { parseISO } from 'date-fns' 
+
 
 function NewDay() {
     const [day, setDay] = useState(null);
@@ -18,7 +17,7 @@ function NewDay() {
     const [tasks, setTasks] = useState(null)
     const [selfcare, setSelfcare] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
-   
+
 
     const [isEditingEntry, setIsEditingEntry] = useState(false)
     const [isEditingMood, setIsEditingMood] = useState(false)
@@ -46,7 +45,7 @@ function NewDay() {
     function formatDate(date) {
         let formattedDate = new Date(date.split('-'))
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-        return  setDate(formattedDate.toLocaleDateString('en-US', options))
+        return setDate(formattedDate.toLocaleDateString('en-US', options))
     }
 
     // console.log(date)
@@ -56,10 +55,6 @@ function NewDay() {
     // const parse = parseISO(testDate.toLocaleString())
     //  console.log(parse)
     // const formatDate = format((testDate), 'MM//dd/yyy')
-
-
-
-
 
 
     const taskItems = tasks.map((task) => {
@@ -142,7 +137,7 @@ function NewDay() {
         setSelfcare(updatedSelfcare)
     }
 
- 
+
 
     return (
         <div className='ui raised segment'>
@@ -150,17 +145,15 @@ function NewDay() {
 
             {/* GRATIFICATION DIV */}
             <div className='column'>
-                <div className=' ui raised segment' style={{backgroundColor: '#e0f9b5' }}>
+                <div className=' ui raised segment' style={{ backgroundColor: '#e0f9b5' }}>
                     <a class="ui olive right ribbon label">gratification</a>
                     <h3>Today I'm grateful for ...</h3>
 
-                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div> {entry} </div>}
+                    <button className='clear-button pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
+                        <i className="pencil alternate icon" />
+                    </button>
 
-                    <div className="actions">
-                        <button className='clear-button' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
-                            <i className="pencil alternate icon" />
-                        </button>
-                    </div>
+                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div> {entry} </div>}
 
                 </div>
 
@@ -169,24 +162,23 @@ function NewDay() {
                         <div className='ui raised segment' style={{ backgroundColor: '#fefdca' }}>
 
                             <a class="ui yellow ribbon label">priorities</a>
-                            <h3>To Do:</h3>
+                            <h3>To Do</h3>
                             {taskItems}
                             <TaskForm setAllTasks={handleAddTask} dayId={day.id} />
                         </div>
 
                         {/* MOOD DIV */}
 
-                        <div className='ui raised segment' style={{backgroundColor: '#a5dee5'}}>
+                        <div className='ui raised segment' style={{ backgroundColor: '#a5dee5' }}>
                             <a class="ui teal ribbon label">mood</a>
                             <h4> How I'm feeling</h4>
 
+                            <button className='clear-button pencil' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
+                                    <i className="pencil alternate icon" />
+                            </button>
+
                             {isEditingMood ? <EditMood dayMood={mood} id={day.id} onUpdateMood={handleUpdateMood} /> : <p>{mood}</p>}
 
-                            <div className="actions">
-                                <button className='clear-button' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
-                                    <i className="pencil alternate icon" />
-                                </button>
-                            </div>
                         </div>
                     </div>
 
@@ -209,7 +201,7 @@ function NewDay() {
                         </div>
                         {/* SELFCARE DIV */}
 
-                        <div className='ui raised segment' style={{backgroundColor: '#ffcfdf'}}>
+                        <div className='ui raised segment' style={{ backgroundColor: '#ffcfdf' }}>
                             <a class="ui pink right ribbon label">mindfulness</a>
                             <h3>Self-Care Checklist</h3>
                             {selfcareItems}
@@ -219,17 +211,6 @@ function NewDay() {
 
 
                     </div>
-
-
-
-
-
-
-
-
-
-
-
 
                 </div>
             </div>
