@@ -47,6 +47,10 @@ function CalendarPage({ days, currentUser }) {
                     onChange={handleChangeDate}
                 />
             </div>
+            <div className='note'>
+                {today} 
+                <p>Let's make it a great day!</p>
+            </div>
 
 
         </div>
