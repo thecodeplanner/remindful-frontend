@@ -33,15 +33,19 @@ function AddDay({currentUser}) {
         }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div className='ui form'> 
+        <form onSubmit={handleSubmit} className='fields'>
+        <div className='field'>
+
         <input
         type="date"
-        // placeholder='reminder to care for yourself!'
         value={day}
         onChange={(e) => setDay(e.target.value)}
         />
-        <input className="button" type="submit" value="add" />
+        </div>
+        <input className="ui basic button" type="submit" value="add" />
     </form>
+    </div>
     )
 }
 

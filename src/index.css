@@ -60,12 +60,6 @@ button:hover {
 
 
 
-
-
-
-
-
-
 .signin-buttons {
   display: flex;
   justify-content: center;
@@ -76,18 +70,16 @@ button:hover {
 .login-title {
     font-family: 'Bungee Outline', cursive;
     font-size: 40px;
-    color:#4e4d4d;
+    color:#ffcfdf;
     text-align: center;
-    padding: 35px;
+    padding-top: 35px;
 }
 
 
 
 
-.container {
-  display: flex;
-  justify-content: center;
-}
+
+
 
 .profile-img {
   height: 5%;
@@ -96,6 +88,18 @@ button:hover {
 
 
 /* Calendar CSS */
+
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+/* #add-entry {
+  float:left;
+  
+} */
 
 
 .react-calendar {
@@ -234,18 +238,6 @@ button:hover {
   color: #919394;
 }
 
-/* div .actions {
-
-  position: relative;
-  top: 0;
-  transform: translateY(-50%);
-  left: 15rem;
-  display: none;
-}
-
-div:hover .actions {
-  display: block;
-} */
 
 .update-water {
   
@@ -263,28 +255,30 @@ div:hover .actions {
   cursor: pointer;
   /* height: 300px; */
 }
+ 
 
+/* STICKY NOTES STYLING */
 
-.note {
-  width: 450px;
-  height: 250px;
+.note-one {
+  width: 275px;
+  height: 150px;
   padding: 10px;
   border: 1px solid #ddd;
   background-size: cover;
 	background-clip: content-box;
-  background-color: #f66f6f;
+  background-color: #fefdca;
   box-sizing: border-box;
   position: relative;
   margin: auto;
   top: 30px; 
   
-  font: 400 2em/180px 'Oswald', sans-serif;
-  color: #fbfbfb;
+  font: 400 1.5em/40px 'Permanent Marker', cursive;
+  color: black;
   text-indent: 20px;
   text-align: center;
 }
 
-.note:after {
+.note-one:after {
   content: "";
   display: block;
   position: absolute;
@@ -296,7 +290,138 @@ div:hover .actions {
   transform: rotate(135deg);
 }
 
-.note:before {
+.note-one:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-top: 50px solid #fefefe;
+  top: -60px;
+  left: -65px;
+  box-shadow: 0px -7px 6px -9px black;
+  transform: rotate(135deg);
+}
+
+
+.note-two {
+  width: 250px;
+  height: 230px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-size: cover;
+	background-clip: content-box;
+  background-color: #e0f9b5;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  top: 30px; 
+  
+  font: 400 1.5em/50px 'Cedarville Cursive', cursive;
+  color: black;
+  text-indent: 20px;
+  text-align: center;
+}
+
+.note-two:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-bottom: 50px solid #fefefe;
+  bottom: -60px;
+  right: -65px;
+  box-shadow: 0px 7px 6px -9px black;
+  transform: rotate(135deg);
+}
+
+.note-two:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-top: 50px solid #fefefe;
+  top: -60px;
+  left: -65px;
+  box-shadow: 0px -7px 6px -9px black;
+  transform: rotate(135deg);
+}
+
+
+.note-three {
+  width: 250px;
+  height: 95px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-size: cover;
+	background-clip: content-box;
+  background-color: #ffcfdf;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  top: 30px; 
+  font: 400 1em/25px 'Nixie One', cursive;
+  color: black;
+  text-indent: 20px;
+  text-align: center;
+}
+
+.note-three:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-bottom: 50px solid #fefefe;
+  bottom: -60px;
+  right: -65px;
+  box-shadow: 0px 7px 6px -9px black;
+  transform: rotate(135deg);
+}
+
+.note-three:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-top: 50px solid #fefefe;
+  top: -60px;
+  left: -65px;
+  box-shadow: 0px -7px 6px -9px black;
+  transform: rotate(135deg);
+}
+
+
+.note-four {
+  width: 275px;
+  height: 175px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-size: cover;
+	background-clip: content-box;
+  background-color: #a5dee5;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  top: 30px; 
+  
+  font: 400 1.5em/40px 'Poiret One', cursive;
+  color: black;
+  text-indent: 20px;
+  text-align: center;
+}
+
+.note-four:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-bottom: 50px solid #fefefe;
+  bottom: -60px;
+  right: -65px;
+  box-shadow: 0px 7px 6px -9px black;
+  transform: rotate(135deg);
+}
+
+.note-four:before {
   content: "";
   display: block;
   position: absolute;

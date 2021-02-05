@@ -20,8 +20,9 @@ function Login({ setCurrentUser }) {
     }
 
     return (
+        
         <div className='ui raised segment centered' style={{backgroundColor: '#fefdca'}} >
-            <div className='ui two column centered grid'>
+            <div className='ui four column centered grid'>
                 <div className='column'>
                    
                     <h2 className='login-title'>yay, welcome back!</h2>
@@ -69,6 +70,7 @@ function Login({ setCurrentUser }) {
 
 
         </div>
+
 
 
     )

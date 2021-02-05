@@ -30,28 +30,43 @@ function CalendarPage({ days, currentUser }) {
     return (
         <div className='ui raised segment'>
             <div>
-                <h1> {today} </h1>
+                <h1 className="bungee-font"> {today} </h1>
 
-                <div class="ui blue labeled icon button" onClick={showAddDayForm}>
+                <div className="ui basic labeled icon button" id='add-entry' onClick={showAddDayForm}>
                     new entry
                 <i class="add icon"></i>
                 </div>
                 {showForm ? <AddDay currentUser={currentUser} /> : null}
-                {/* <button onClick={showAddDayForm}>start new entry</button>
-                {showForm ? <AddDay currentUser={currentUser} /> : null} */}
+              
             </div>
 
-            <div className='container'>
+            <div className='calendar-container'>
                 <Calendar
                     value={date}
                     onChange={handleChangeDate}
                 />
             </div>
-            <div className='note'>
-                {today} 
-                <p>Let's make it a great day!</p>
+
+            
+            <div className='ui three column grid'>
+            <div className='note-one'>
+                <div>It's a new day, let's make it count!!!</div>
+            </div>
+            <div className='note-two'>
+                <div>Who has made my life better? Why?</div>
             </div>
 
+            <div className='note-three'>
+                <div>What can I do differently to improve myself?</div>
+            </div>
+
+            <div className='note-four'>
+                <div>What is something you are proud of this month?</div>
+            </div>
+          
+            </div>
+
+          
 
         </div>
 
