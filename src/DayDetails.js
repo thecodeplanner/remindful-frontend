@@ -142,20 +142,20 @@ function NewDay() {
     return (
         <div className='ui raised segment'>
             <div className='date-page'> 
-                <h2 className='highlight-font'>{date}</h2> 
+                <h2 className='bungee-font'>{date}</h2> 
             </div>
 
             {/* GRATIFICATION DIV */}
             <div className='column'>
                 <div className=' ui raised segment ' style={{ backgroundColor: '#ffcfdf' }}>
-                    <a class="ui pink right ribbon label"><i className='heart icon'></i>gratification</a>
-                    <h3 className='grateful'>Today I'm grateful for ...</h3>
+                    <a class="ui pink ribbon label"><i className='heart icon'></i>gratification</a>
+                    <h3 className='grateful-title'>Today I'm grateful for ...</h3>
 
                     <button className='clear-button pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
                         <i className="pencil alternate icon" />
                     </button>
 
-                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div> {entry} </div>}
+                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div className='grateful'> {entry} </div>}
 
                 </div>
 
@@ -207,7 +207,7 @@ function NewDay() {
 
                         <div className='ui raised segment' style={{ backgroundColor: '#e0f9b5' }}>
                             <a class="ui olive right ribbon label"><i className='cloud icon'></i>mindfulness  </a>
-                            <h3 className='dotted-font'>self-care checklist</h3>
+                            <h3 className='selfcare-title'>self-care checklist</h3>
                             {selfcareItems}
                             <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />
 
