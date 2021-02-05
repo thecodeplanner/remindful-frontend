@@ -84,8 +84,8 @@ button:hover {
 
 
 .profile-img {
-  height: 5%;
-  width: 5%;
+  height: 25%;
+  width: 25%;
 }
 
 
@@ -108,7 +108,7 @@ button:hover {
   width: 350px;
   max-width: 100%;
   background: white;
-  border: 1px solid #96a096;
+  border: 2px solid #96a096;
   border-radius: 7px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
@@ -201,26 +201,26 @@ button:hover {
 
 /* shows color for today's date */
 .react-calendar__tile--now {
-  background: #ffffa9; 
+  background: #fefdca; 
 }
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
   background: #ffffa9;
 }
 .react-calendar__tile--hasActive {
-  background: #a9d4ff;
+  background: #a5dee5;
 }
 .react-calendar__tile--hasActive:enabled:hover,
 .react-calendar__tile--hasActive:enabled:focus {
-  background: #a9d4ff;
+  background: #a5dee5;
 }
 .react-calendar__tile--active {
-  background: #a9d4ff;
+  background: #a5dee5;
   color: white;
 }
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: #a9d4ff;
+  background: #a5dee5;
 }
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
@@ -542,4 +542,14 @@ i.heart.outline.icon::before {
 div.user-info {
   text-align: center;
   padding: 50px;
+}
+
+#delete-button {
+justify-content: right;
+}
+
+.user-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+  color: #a5dee5
 }

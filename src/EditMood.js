@@ -29,6 +29,7 @@ function EditMood({ dayMood, id, onUpdateMood }) {
                         type="text"
                         name="mood"
                         autoComplete="off"
+                        placeholder='how are we feeling?'
                         value={mood}
                         onChange={(e) => setMood(e.target.value)}
                     />

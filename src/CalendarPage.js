@@ -30,6 +30,7 @@ function CalendarPage({ days, currentUser }) {
     return (
         <div className='ui raised segment'>
             <div>
+            <a className="ui olive right ribbon label"><i className='calendar alternate outline icon'></i>calendar</a>
                 <h1 className="bungee-font"> {today} </h1>
 
                 <div className="ui basic labeled icon button" id='add-entry' onClick={showAddDayForm}>

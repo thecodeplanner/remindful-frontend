@@ -37,10 +37,10 @@ function DayCard({day, onDelete}) {
 
     return (
        
-        <div className='card' id='day-card' style={{backgroundColor: '#fefdca'}}>
-            <span onClick={handleDate}>
-                {day.date}                
-            </span>
+        <div className='card' id='day-card' style={{backgroundColor: '#e0f9b5'}}>
+            <div onClick={handleDate}>
+                date: {day.date}                
+            </div>
                 <button className="clear-button" onClick={handleDelete}>
                     <i className="trash alternate outline icon" />
                 </button>

@@ -29,11 +29,12 @@ function EditDay({dayEntry, id, onUpdateEntry}) {
                 type="text"
                 name="entry"
                 autoComplete="off"
+                placeholder='share your thoughts...'
                 value={entry}
                 onChange={(e) => setEntry(e.target.value)}
             />
             </div>
-            <input className='ui button' type="submit" value="update" />
+            <input className='ui basic button' type="submit" value="update" />
             </form>
 
 
