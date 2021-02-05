@@ -21,16 +21,32 @@ function EditProfileForm({currentUser, onHandleUpdate}) {
     }
     console.log(updatedUserInfo)
 
-    onHandleUpdate(updatedUserInfo)
+    // onHandleUpdate(updatedUserInfo)
 
+    fetch(`http://localhost:3000/users/${currentUser.id}`, {
+      method: "PATCH", 
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedUserInfo)
+  })
+      .then(res => res.json())
+      .then(userData => {onHandleUpdate(userData)})
+
+      // How to update form after submit? 
+
+      // setFirstName(userData.first_name)
+      // setLastName(userData.last_name)
+      // setUsername(userData.username)
 
   }
 
 
-
   return (
+   
+
     <div className='ui form'>
-      <form onSubmit={handleSubmit} className='fields'>
+      <form onSubmit={handleSubmit} >
         <div className='field'>
         <label>First Name</label>
           <input
@@ -65,7 +81,7 @@ function EditProfileForm({currentUser, onHandleUpdate}) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <input className=" ui mini basic button" type="submit" value="save changes" />
+        <input className=" ui small basic button" type="submit" value="save changes" />
       </form>
     </div>
   )

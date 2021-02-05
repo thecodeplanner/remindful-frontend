@@ -1,5 +1,5 @@
-import { format } from "date-fns";
-import React, { useState } from "react"
+// import { format } from "date-fns";
+import React from "react"
 import { useHistory } from "react-router-dom";
 
 function DayCard({day, onDelete}) {

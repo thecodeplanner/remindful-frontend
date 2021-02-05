@@ -30,7 +30,8 @@ code {
 
 .navbar li {
   display: inline-block;
-  padding: 15px;
+  padding: 12px;
+  margin-bottom: 20px
 }
 
 
@@ -41,7 +42,6 @@ code {
   /* font-family: 'Permanent Marker', cursive; */
   font-family: 'Cedarville Cursive', cursive;
   font-size: 25px;
-
   background-color: #a5dee5;
   color: white;
   padding: 0.50rem;
@@ -535,4 +535,11 @@ div .to-do-list {
 
 i.heart.outline.icon::before {
   color: #ffcfdf;
+}
+
+/* PROFILE PAGE */
+
+div.user-info {
+  text-align: center;
+  padding: 50px;
 }

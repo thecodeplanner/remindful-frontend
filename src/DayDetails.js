@@ -140,7 +140,7 @@ function NewDay() {
             {/* GRATIFICATION DIV */}
             <div className='column'>
                 <div className=' ui raised segment ' style={{ backgroundColor: '#ffcfdf' }}>
-                    <a class="ui pink ribbon label"><i className='heart icon'></i>gratification</a>
+                    <a className="ui pink ribbon label"><i className='heart icon'></i>gratification</a>
                     <h3 className='grateful-title'>Today I'm grateful for ...</h3>
 
                     <button className='clear-button pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
