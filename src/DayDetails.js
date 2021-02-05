@@ -48,14 +48,6 @@ function NewDay() {
         return setDate(formattedDate.toLocaleDateString('en-US', options))
     }
 
-    // console.log(date)
-    // formatDate(date)
-
-    // const testDate = (day.date).replace(/-/g, '/')
-    // const parse = parseISO(testDate.toLocaleString())
-    //  console.log(parse)
-    // const formatDate = format((testDate), 'MM//dd/yyy')
-
 
     const taskItems = tasks.map((task) => {
         return (
