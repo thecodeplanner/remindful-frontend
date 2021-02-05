@@ -21,12 +21,11 @@ function Signup({setCurrentUser}) {
     }
 
     return(
-        <div className='ui raised segment centered' >
-            <a class="ui blue right ribbon label">sign up</a>
-            <div className='ui three column centered grid'>
+        <div className='ui raised segment centered' style={{backgroundColor: '#e0f9b5'}}>
+            <div className='ui two column centered grid'>
                 <div className='column'>
                    
-                    <h2>let's get started!</h2>
+                    <h2 className='login-title'>let's get started!</h2>
                     <div className='ui form'>
                         <form className="login-form" onSubmit={handleSubmit}>
                         <div className='field'>
@@ -65,7 +64,7 @@ function Signup({setCurrentUser}) {
                                 />
                             </div>
 
-                            <input className="ui button" type="submit" value="create new account" />
+                            <input className="ui basic button" type="submit" value="create new account" />
                         </form>
 
                        

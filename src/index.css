@@ -25,16 +25,64 @@ code {
   justify-content: center;
 }
 
+
 .navbar li {
   display: inline-block;
   padding: 15px;
 }
 
 
+/* NAV BUTTONS  */
+
+
+.button {
+  /* font-family: 'Permanent Marker', cursive; */
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 25px;
+
+  background-color: #a5dee5;
+  color: white;
+  padding: 0.50rem;
+  margin: 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.button.active,
+.button:hover,
+button.active,
+button:focus,
+button:hover {
+  color: white;
+  background-color: #ffcfdf;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
 .signin-buttons {
   display: flex;
   justify-content: center;
 }
+
+
+
+.login-title {
+    font-family: 'Bungee Outline', cursive;
+    font-size: 40px;
+    color:#4e4d4d;
+    text-align: center;
+    padding: 35px;
+}
+
+
+
 
 .container {
   display: flex;
@@ -303,6 +351,7 @@ div .selfcare-list {
   font-size: 40px;
   color:#4e4d4d;
   text-align: right;
+  padding: 10px;
 }
 
 .date-page {

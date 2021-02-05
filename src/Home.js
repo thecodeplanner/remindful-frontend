@@ -16,12 +16,12 @@ function Home() {
         <div className='ui raised segment'>
 
             <div id="home-page">
-                <img src="remindful.png" alt="remindful-logo" />
+                <img className='logo' src="remindful-logo-large.png" alt="remindful-logo" />
             </div>
             
             <div className="signin-buttons">
 
-                <div class="ui medium buttons">
+                <div class="ui medium basic buttons">
                     <button class="ui button" onClick={handleLogin}>login</button>
                     <div class="or"></div>
                     <button class="ui button" onClick={handleSignup}>sign up</button>

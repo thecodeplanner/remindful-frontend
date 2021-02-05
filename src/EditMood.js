@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function EditMood({dayMood, id, onUpdateMood}) {
+function EditMood({ dayMood, id, onUpdateMood }) {
     const [mood, setMood] = useState(dayMood)
 
     function handleFormSubmit(e) {
@@ -11,7 +11,7 @@ function EditMood({dayMood, id, onUpdateMood}) {
         }
 
         fetch(`http://localhost:3000/days/${id}`, {
-            method: "PATCH", 
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -19,19 +19,23 @@ function EditMood({dayMood, id, onUpdateMood}) {
         })
             .then(res => res.json())
             .then(moodData => onUpdateMood(moodData.mood))
-      }
+    }
 
     return (
-        <form className="edit-entry" onSubmit={handleFormSubmit}>
-            <input
-                type="text"
-                name="mood"
-                autoComplete="off"
-                value={mood}
-                onChange={(e) => setMood(e.target.value)}
-            />
-            <input type="submit" value="update" />
-    </form>
+        <div className='ui form'>
+            <form className="fields" onSubmit={handleFormSubmit}>
+                <div className='field'>
+                    <input
+                        type="text"
+                        name="mood"
+                        autoComplete="off"
+                        value={mood}
+                        onChange={(e) => setMood(e.target.value)}
+                    />
+                </div>
+                <input className='ui basic button' type="submit" value="update" />
+            </form>
+        </div>
     )
 }
 

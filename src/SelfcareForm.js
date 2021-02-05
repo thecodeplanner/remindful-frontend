@@ -39,7 +39,7 @@ function SelfcareForm({dayId, setAllSelfcare}) {
                     onChange={(e) => setDescription(e.target.value)}
                     />
                 </div>
-                <input className="ui button" type="submit" value="add" />
+                <input className="ui basic button" type="submit" value="add" />
             </form>
 
         </div>

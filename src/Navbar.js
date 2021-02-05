@@ -13,21 +13,21 @@ function Navbar({ currentUser, setCurrentUser }) {
         <div className="navbar">
             {currentUser ?
                 <>
-                    <NavLink to="/calendar">
+                    <NavLink to="/calendar" exact className="button">
                         <li>my calendar</li>
                     </NavLink>
-                    <NavLink to="/today">
+                    <NavLink to="/today" exact className="button">
                         <li>today</li>
                     </NavLink>
-                    <NavLink to="/entries">
+                    <NavLink to="/entries" exact className="button">
                         <li>all entries</li>
                     </NavLink>
-                    <NavLink to="/profile">
+                    <NavLink to="/profile" exact className="button">
                         <li>profile</li>
                     </NavLink>
-                    <li onClick={handleLogout}>logout</li>
+                    <a className='button' onClick={handleLogout}>logout</a>
                 </> : 
-                    <NavLink to="/">
+                    <NavLink to="/" exact className="button">
                     <li> remindful </li>
                     </NavLink>
             }
