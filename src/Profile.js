@@ -19,7 +19,7 @@ function Profile({currentUser}) {
             <h3>Name: {(currentUser.first_name) + ' ' + (currentUser.last_name)} </h3>
             <h4>Username: {currentUser.username}</h4>
             <h4>Days Logged: {currentUser.days.length} days</h4>
-            <button onClick={handleEdit}>Edit Profile</button>
+            <button className='ui button' onClick={handleEdit}>Edit Profile</button>
             
             </div>
         

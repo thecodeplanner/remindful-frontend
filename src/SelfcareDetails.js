@@ -35,8 +35,8 @@ function SelfcareDetails({description, status, id, onDelete}) {
     
     return (
       <>
-      <div>
-          {showStatus ? <i onClick={handleStatus} className="heart icon" /> : <i onClick={handleStatus} className="heart outline icon" />}
+      <div className='selfcare-list'>
+          {showStatus ? <i onClick={handleStatus} className="heart icon" id='heart'/> : <i onClick={handleStatus} className="heart outline icon" />}
           {description}
           {showStatus ? <i onClick={handleDelete} className='window close outline icon' id='x-selfcare'/> : null}
       </div>

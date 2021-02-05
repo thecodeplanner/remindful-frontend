@@ -34,7 +34,7 @@ function TaskDetails({description, status, id, onDelete}) {
     
     return (
         <>
-            <div>
+            <div className='to-do-list'>
             {showStatus ? <i onClick={handleStatus} className="check circle icon" /> : <i onClick={handleStatus} className="circle outline icon" />}
             {description}
             {showStatus ? <i onClick={handleDelete} className='window close outline icon' id='x-icon'/> : null}

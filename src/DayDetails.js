@@ -141,13 +141,15 @@ function NewDay() {
 
     return (
         <div className='ui raised segment'>
-            <h2> {date} </h2>
+            <div className='date-page'> 
+                <h2 className='highlight-font'>{date}</h2> 
+            </div>
 
             {/* GRATIFICATION DIV */}
             <div className='column'>
-                <div className=' ui raised segment' style={{ backgroundColor: '#e0f9b5' }}>
-                    <a class="ui olive right ribbon label"><i className='thumbtack icon'></i>gratification</a>
-                    <h3>Today I'm grateful for ...</h3>
+                <div className=' ui raised segment ' style={{ backgroundColor: '#ffcfdf' }}>
+                    <a class="ui pink right ribbon label"><i className='heart icon'></i>gratification</a>
+                    <h3 className='grateful'>Today I'm grateful for ...</h3>
 
                     <button className='clear-button pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
                         <i className="pencil alternate icon" />
@@ -157,12 +159,14 @@ function NewDay() {
 
                 </div>
 
+                {/* TO DO DIV */}
+
                 <div className='ui two column grid'>
                     <div className="column" >
                         <div className='ui raised segment' style={{ backgroundColor: '#fefdca' }}>
 
                             <a class="ui yellow ribbon label"><i className='bookmark icon'></i>priorities</a>
-                            <h3>To Do</h3>
+                            <h3 className='to-do'>To Do</h3>
                             {taskItems}
                             <TaskForm setAllTasks={handleAddTask} dayId={day.id} />
                         </div>
@@ -171,13 +175,13 @@ function NewDay() {
 
                         <div className='ui raised segment' style={{ backgroundColor: '#a5dee5' }}>
                             <a class="ui teal ribbon label"><i className='smile outline icon'></i>mood</a>
-                            <h4> How I'm feeling</h4>
+                            <h4 className='mood-title'> How I'm feeling . . .</h4>
 
                             <button className='clear-button pencil' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
                                     <i className="pencil alternate icon" />
                             </button>
 
-                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} onUpdateMood={handleUpdateMood} /> : <p>{mood}</p>}
+                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} onUpdateMood={handleUpdateMood} /> : <p className='mood'>{mood}</p>}
 
                         </div>
                     </div>
@@ -188,7 +192,7 @@ function NewDay() {
 
                         <div className='ui raised segment'>
                             <a class="ui blue right ribbon label"><i className='tint icon' />daily water intake</a>
-                            <h4>I drank {water} oz. of water today</h4>
+                            <h4 className='water-title'>I drank {water} oz. of water today</h4>
                             <div>
                                 <button className='update-water' onClick={handleUpdateWaterEight}>
                                     <i className='tint icon' /> + 8 oz.
@@ -201,9 +205,9 @@ function NewDay() {
                         </div>
                         {/* SELFCARE DIV */}
 
-                        <div className='ui raised segment' style={{ backgroundColor: '#ffcfdf' }}>
-                            <a class="ui pink right ribbon label"><i className='heart icon'></i>mindfulness  </a>
-                            <h3>Self-Care Checklist</h3>
+                        <div className='ui raised segment' style={{ backgroundColor: '#e0f9b5' }}>
+                            <a class="ui olive right ribbon label"><i className='cloud icon'></i>mindfulness  </a>
+                            <h3 className='dotted-font'>self-care checklist</h3>
                             {selfcareItems}
                             <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />
 
