@@ -3,9 +3,14 @@ import React, {useState} from "react"
 import { useHistory } from "react-router-dom";
 
 
-function AddDay({currentUser}) {
+function AddDay({currentUser, onAddDay}) {
     const [day, setDay] = useState('')
     const history = useHistory()
+
+        function handleDayData(dayData) {
+            onAddDay(dayData)
+            history.push('/entries')
+        }
 
         function handleSubmit(e) {
             e.preventDefault()
@@ -28,8 +33,7 @@ function AddDay({currentUser}) {
                 body: JSON.stringify(newDay)
             })
                 .then(res => res.json())
-                .then(dayData => history.push(`/day/${dayData.id}`))
-                
+                .then(dayData => handleDayData(dayData))
         }
 
     return (
