@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 function AddDay({currentUser, onAddDay}) {
     const [day, setDay] = useState('')
     const history = useHistory()
+    console.log(day)
 
         function handleDayData(dayData) {
             onAddDay(dayData)
@@ -37,7 +38,7 @@ function AddDay({currentUser, onAddDay}) {
         }
 
     return (
-        <div className='ui form'> 
+        <div className='ui form' id='add-day'> 
         <form onSubmit={handleSubmit} className='fields'>
         <div className='field'>
 
@@ -47,7 +48,7 @@ function AddDay({currentUser, onAddDay}) {
         onChange={(e) => setDay(e.target.value)}
         />
         </div>
-        <input className="ui basic button" type="submit" value="add" />
+        <input className="ui mini basic button" type="submit" value="add" />
     </form>
     </div>
     )

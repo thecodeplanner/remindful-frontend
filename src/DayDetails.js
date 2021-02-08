@@ -140,7 +140,7 @@ function NewDay() {
             {/* GRATIFICATION DIV */}
             <div className='column'>
                 <div className=' ui raised segment ' style={{ backgroundColor: '#ffcfdf' }}>
-                    <a className="ui pink ribbon label"><i className='heart icon'></i>gratification</a>
+                    <a className="ui pink ribbon label" id='gratification-label'><i className='heart icon'></i>gratification</a>
                     <h3 className='grateful-title'>Today I'm grateful for ...</h3>
 
                     <button className='clear-button pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>
@@ -157,7 +157,7 @@ function NewDay() {
                     <div className="column" >
                         <div className='ui raised segment' style={{ backgroundColor: '#fefdca' }}>
 
-                            <a className="ui yellow ribbon label"><i className='bookmark icon'></i>priorities</a>
+                            <a className="ui yellow ribbon label" id='priorities-label'><i className='bookmark icon'></i>priorities</a>
                             <h3 className='to-do'>To Do</h3>
                             {taskItems}
                             <TaskForm setAllTasks={handleAddTask} dayId={day.id} />
@@ -166,7 +166,7 @@ function NewDay() {
                         {/* MOOD DIV */}
 
                         <div className='ui raised segment' style={{ backgroundColor: '#a5dee5' }}>
-                            <a className="ui teal ribbon label"><i className='smile outline icon'></i>mood</a>
+                            <a className="ui teal ribbon label" id='mood-label'><i className='smile outline icon'></i>mood</a>
                             <h4 className='mood-title'> How I'm feeling . . .</h4>
 
                             <button className='clear-button pencil' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>

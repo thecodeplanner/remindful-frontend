@@ -98,10 +98,15 @@ button:hover {
   padding-bottom: 50px;
 }
 
-/* #add-entry {
-  float:left;
+ #add-entry {
+  float:right;
   
-} */
+} 
+
+#add-day {
+  float:right;
+  padding-right: 10px;
+} 
 
 
 .react-calendar {
@@ -255,7 +260,7 @@ button:hover {
 
 #day-card {
   cursor: pointer;
-  /* height: 300px; */
+  height: 100%;
 }
  
 
@@ -552,4 +557,21 @@ justify-content: right;
   font-family: 'Permanent Marker', cursive;
   font-size: 50px;
   color: #a5dee5
+}
+
+#cal-label {
+  font-family: 'Comfortaa', cursive;
+}
+
+#gratification-label {
+  font-family: 'Comfortaa', cursive;
+}
+
+
+#priorities-label {
+  font-family: 'Comfortaa', cursive;
+}
+
+#mood-label { 
+  font-family: 'Comfortaa', cursive;
 }

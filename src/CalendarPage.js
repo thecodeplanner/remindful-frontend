@@ -9,37 +9,25 @@ function CalendarPage({ onAddDay, currentUser }) {
 
     const today = format(date, 'iiii, MMMM do, yyyy')
 
-    // console.log(chosenDay)
-
     function handleChangeDate(e) {
         setDate(e)
     }
-
-    // const dayToRender = days.filter((day) => {
-    //     return (
-    //         day.date === chosenDay
-    //         (setPickedDay(dayToRender))
-    //     )
-    // })
 
     function showAddDayForm() {
         setShowForm(!showForm)
     }
 
-
     return (
         <div className='ui raised segment'>
-            <div>
-            <a className="ui olive right ribbon label"><i className='calendar alternate outline icon'></i>calendar</a>
-                <h1 className="bungee-font"> {today} </h1>
 
-                <div className="ui basic labeled icon button" id='add-entry' onClick={showAddDayForm}>
-                    new entry
+            <a className="ui olive ribbon label" id='cal-label'><i className='calendar alternate outline icon'></i>calendar</a>
+
+            <div className="ui small basic labeled icon button" id='add-entry' onClick={showAddDayForm}>
+                new entry
                 <i class="add icon"></i>
-                </div>
-                {showForm ? <AddDay currentUser={currentUser} onAddDay={onAddDay}/> : null}
-              
             </div>
+            {showForm ? <AddDay currentUser={currentUser} onAddDay={onAddDay} /> : null}
+            <h1 className="bungee-font"> {today} </h1>
 
             <div className='calendar-container'>
                 <Calendar
@@ -48,27 +36,23 @@ function CalendarPage({ onAddDay, currentUser }) {
                 />
             </div>
 
-            
             <div className='ui three column grid'>
-            <div className='note-one'>
-                <div>It's a new day, let's make it count!!!</div>
-            </div>
-            <div className='note-two'>
-                <div>Who has made my life better? Why?</div>
-            </div>
+                <div className='note-one'>
+                    <div>It's a new day, let's make it count!!!</div>
+                </div>
+                <div className='note-two'>
+                    <div>Who has made my life better? Why?</div>
+                </div>
 
-            <div className='note-three'>
-                <div>What will I let go of today?</div>
-            </div>
+                <div className='note-three'>
+                    <div>What will I let go of today?</div>
+                </div>
 
-            <div className='note-four'>
-                <div>What is something I'm proud of this month?</div>
-            </div>
-          
-            </div>
+                <div className='note-four'>
+                    <div>What is something I'm proud of this month?</div>
+                </div>
 
-          
-
+            </div>
         </div>
 
 

@@ -21,10 +21,10 @@ function Home() {
             
             <div className="signin-buttons">
 
-                <div class="ui medium basic buttons">
-                    <button class="ui button" onClick={handleLogin}>login</button>
-                    <div class="or"></div>
-                    <button class="ui button" onClick={handleSignup}>sign up</button>
+                <div className="ui medium basic buttons">
+                    <button className="ui button" onClick={handleLogin}>login</button>
+                    <div className="or"></div>
+                    <button className="ui button" onClick={handleSignup}>sign up</button>
                 </div>
 
             </div>
