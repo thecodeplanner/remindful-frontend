@@ -32,6 +32,13 @@ function App() {
     setDays(updatedDays)
   }
 
+  function handleUpdateDay(updatedDetails) {
+    const updatedDaysList = days.map((day) => {
+      return day.id === updatedDetails.id ? updatedDetails : day
+    })
+    setDays(updatedDaysList)
+  }
+
   return (
     <div>
      <Router>
@@ -59,7 +66,7 @@ function App() {
            <Days days={days} onDelete={handleDelete}/>
          </Route>
          <Route exact path='/day/:id'>
-           <DayDetails  />
+           <DayDetails onHandleUpdate={handleUpdateDay} />
          </Route>
        </Switch>
      </Router>

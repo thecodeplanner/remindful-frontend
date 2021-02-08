@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 
-function EditMood({ dayMood, id, onUpdateMood }) {
+function EditMood({ dayMood, id, date, water, tasks, selfcare, onUpdateMood, onHandleUpdate }) {
     const [mood, setMood] = useState(dayMood)
 
     function handleFormSubmit(e) {
         e.preventDefault();
 
         const updatedMood = {
-            mood
+            id: id,
+            mood,
+            date, 
+            water_intake: water,
+            tasks, 
+            selfcares: selfcare
+
         }
+        onHandleUpdate(updatedMood)
 
         fetch(`http://localhost:3000/days/${id}`, {
             method: "PATCH",

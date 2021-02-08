@@ -24,7 +24,7 @@ function CalendarPage({ onAddDay, currentUser }) {
 
             <div className="ui small basic labeled icon button" id='add-entry' onClick={showAddDayForm}>
                 new entry
-                <i class="add icon"></i>
+                <i className="add icon"></i>
             </div>
             {showForm ? <AddDay currentUser={currentUser} onAddDay={onAddDay} /> : null}
             <h1 className="bungee-font"> {today} </h1>

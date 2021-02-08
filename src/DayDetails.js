@@ -8,7 +8,7 @@ import EditDay from './EditDay';
 import EditMood from './EditMood';
 
 
-function NewDay() {
+function NewDay({onHandleUpdate}) {
     const [day, setDay] = useState(null);
     const [date, setDate] = useState(null)
     const [entry, setEntry] = useState(null)
@@ -40,6 +40,17 @@ function NewDay() {
     }, [params.id])
 
     if (!isLoaded) return <h2>Loading...</h2>;
+
+//     const updatedDetails = {
+//         id: day.id,
+//         entry,
+//         mood,
+//         water_intake: water,
+//         tasks, 
+//         selfcares: selfcare
+//     }
+
+//    onHandleUpdate(updatedDetails)
 
 
     function formatDate(date) {
@@ -83,8 +94,15 @@ function NewDay() {
 
     function handleUpdateWaterEight() {
         const updateWater = {
-            water_intake: day.water_intake += 8
+            id: day.id,
+            entry,
+            mood,
+            date: day.date,
+            water_intake: day.water_intake += 8,
+            tasks,
+            selfcares: selfcare
         }
+        onHandleUpdate(updateWater)
 
         fetch(`http://localhost:3000/days/${day.id}`, {
             method: "PATCH",
@@ -100,8 +118,15 @@ function NewDay() {
 
     function handleUpdateWaterSixteen() {
         const updateWater = {
-            water_intake: day.water_intake += 16
+            id: day.id,
+            entry,
+            mood,
+            date: day.date,
+            water_intake: day.water_intake += 16,
+            tasks,
+            selfcares: selfcare
         }
+        onHandleUpdate(updateWater)
 
         fetch(`http://localhost:3000/days/${day.id}`, {
             method: "PATCH",
@@ -173,7 +198,7 @@ function NewDay() {
                                     <i className="pencil alternate icon" />
                             </button>
 
-                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} onUpdateMood={handleUpdateMood} /> : <p className='mood'>{mood}</p>}
+                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} onUpdateMood={handleUpdateMood} onHandleUpdate={onHandleUpdate}/> : <p className='mood'>{mood}</p>}
 
                         </div>
                     </div>
