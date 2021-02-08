@@ -58,11 +58,11 @@ function CalendarPage({ onAddDay, currentUser }) {
             </div>
 
             <div className='note-three'>
-                <div>What can I do differently to improve myself?</div>
+                <div>What will I let go of today?</div>
             </div>
 
             <div className='note-four'>
-                <div>What is something you are proud of this month?</div>
+                <div>What is something I'm proud of this month?</div>
             </div>
           
             </div>
