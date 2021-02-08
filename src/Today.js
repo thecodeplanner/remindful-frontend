@@ -12,13 +12,26 @@ function Today({days}) {
         return day.date === `${formattedDate}`
     })
 
-    if (findToday.length === 0) {
-        alert("Please create a new entry!")
-        history.push('/calendar')    
-    }else if (findToday.length === 1) {
+    // if (findToday.length === 0) {
+    //     alert("Please create a new entry!")
+    //     history.push('/calendar')    
+    // }else if (findToday.length === 1) {
+    //     const dayId = (findToday[0].id)
+    //     history.push(`/day/${dayId}`)
+    // }
+
+       
+    if (findToday.length === 1) {
         const dayId = (findToday[0].id)
         history.push(`/day/${dayId}`)
+    }else if (findToday.length > 1) {
+        alert("You have more than one entry for today. Please choose which entry you would like to view.")
+        history.push('/entries')
+    }else {
+        alert("Please create a new entry!")
+        history.push('/calendar') 
     }
+
 
   
     

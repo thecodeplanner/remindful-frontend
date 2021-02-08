@@ -183,7 +183,7 @@ function NewDay() {
                         {/* WATER DIV */}
 
                         <div className='ui raised segment'>
-                            <a className="ui blue right ribbon label"><i className='tint icon' />daily water intake</a>
+                            <a className="ui blue right ribbon label" id='water-label'><i className='tint icon' />daily water intake</a>
                             <h4 className='water-title'>I drank {water} oz. of water today</h4>
                             <div>
                                 <button className='update-water' onClick={handleUpdateWaterEight}>
@@ -198,7 +198,7 @@ function NewDay() {
                         {/* SELFCARE DIV */}
 
                         <div className='ui raised segment' style={{ backgroundColor: '#e0f9b5' }}>
-                            <a className="ui olive right ribbon label"><i className='cloud icon'></i>mindfulness  </a>
+                            <a className="ui olive right ribbon label" id='mindful-label'><i className='cloud icon'></i>mindfulness  </a>
                             <h3 className='selfcare-title'>self-care checklist</h3>
                             {selfcareItems}
                             <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />

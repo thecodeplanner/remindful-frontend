@@ -16,8 +16,8 @@ function Profile({ currentUser }) {
     }
 
     return (
-        <div className='ui raised centered segment' style={{ backgroundColor: '#e0f9b5' }}>
-            <a className="ui yellow ribbon label"><i className='user icon'></i>profile</a>
+        <div className='ui raised centered segment' >
+            <a className="ui olive ribbon label" id="profile-label"><i className='user icon'></i>profile</a>
 
 
             <button className='clear-button pencil' onClick={() => setIsEditing(isEditing => !isEditing)}>

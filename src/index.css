@@ -556,7 +556,7 @@ justify-content: right;
 .user-title {
   font-family: 'Permanent Marker', cursive;
   font-size: 50px;
-  color: #a5dee5
+  color: #4e4d4d
 }
 
 #cal-label {
@@ -574,4 +574,29 @@ justify-content: right;
 
 #mood-label { 
   font-family: 'Comfortaa', cursive;
+}
+
+#water-label {
+  font-family: 'Comfortaa', cursive;
+}
+
+#mindful-label {
+  font-family: 'Comfortaa', cursive;
+}
+
+#profile-label {
+  font-family: 'Comfortaa', cursive;
+}
+
+#entry-label {
+  font-family: 'Comfortaa', cursive;
+}
+
+
+/* entry page  */
+
+#header-date {
+  font-family: 'Permanent Marker', cursive;
+  color: #4e4d4d
+
 }
