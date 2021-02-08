@@ -41,17 +41,6 @@ function NewDay({onHandleUpdate}) {
 
     if (!isLoaded) return <h2>Loading...</h2>;
 
-//     const updatedDetails = {
-//         id: day.id,
-//         entry,
-//         mood,
-//         water_intake: water,
-//         tasks, 
-//         selfcares: selfcare
-//     }
-
-//    onHandleUpdate(updatedDetails)
-
 
     function formatDate(date) {
         let formattedDate = new Date(date.split('-'))
@@ -75,7 +64,21 @@ function NewDay({onHandleUpdate}) {
     function handleAddTask(newTask) {
         const newTaskList = [...tasks, newTask]
         setTasks(newTaskList)
-    }
+
+        const updatedTasks = {
+            id: day.id,
+            entry,
+            mood,
+            date: day.date,
+            water_intake: water,
+            tasks: newTaskList,
+            selfcares: selfcare
+        }
+
+        console.log(updatedTasks)
+
+        onHandleUpdate(updatedTasks)
+    } 
 
     function handleSelfcare(newSelfcare) {
         const newSelfcareList = [...selfcare, newSelfcare]
@@ -153,7 +156,6 @@ function NewDay({onHandleUpdate}) {
         })
         setSelfcare(updatedSelfcare)
     }
-
 
 
     return (

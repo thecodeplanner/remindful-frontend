@@ -12,7 +12,7 @@ function DayCard({ day, onDelete }) {
 
     if (date === '') {
         const formattedDate = new Date(originalDate.split('-'))
-        const options = { year: 'numeric', month: 'long', day: 'numeric' }
+        const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }
         setDate(formattedDate.toLocaleDateString('en-US', options))
     }
     
@@ -43,7 +43,7 @@ function DayCard({ day, onDelete }) {
 
         <div className='ui card' id='day-card' style={{ backgroundColor: '#e0f9b5' }}>
             <div onClick={handleDate} className="content">
-                <div className="header" id='header-date'>Date: {date}</div>
+                <div className="header" id='header-date'>{date}</div>
                 <h4 class="ui sub header">Water Intake: {day.water_intake} oz.</h4>
                 <h4 class="ui sub header">Mood: {day.mood}</h4>
                 {/* <h4 class="ui sub header">Grateful for: {day.entry}</h4> */}

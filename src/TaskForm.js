@@ -1,7 +1,7 @@
 
 import React, {useState} from "react"
 
-function TaskForm({dayId, setAllTasks}) {
+function TaskForm({dayId, setAllTasks, day}) {
     const [description, setDescription] = useState('')
 
     // const dayId = tasks.filter((task) => task.day_id)
