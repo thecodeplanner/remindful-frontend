@@ -42,7 +42,7 @@ function App() {
   return (
     <div>
      <Router>
-       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} setDays={setDays}/>
        <Switch>
          <Route exact path ="/">
            <Home />

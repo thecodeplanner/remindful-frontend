@@ -1,11 +1,13 @@
+import { setDayWithOptions } from "date-fns/fp"
 import React from "react"
 import { NavLink, useHistory } from "react-router-dom"
 
-function Navbar({ currentUser, setCurrentUser }) {
+function Navbar({ currentUser, setCurrentUser, setDays }) {
     const history = useHistory()
 
     function handleLogout() {
         setCurrentUser(null)
+        setDays(null)
         history.push('/')
     }
 
