@@ -196,10 +196,10 @@ function NewDay({onHandleUpdate}) {
                 <h2 className='bungee-font'>{date}</h2> 
             </div>
 
-            {/* GRATIFICATION DIV */}
+            {/* GRATITUDE DIV */}
             <div className='column'>
                 <div className=' ui raised segment ' style={{ backgroundColor: '#ffcfdf' }}>
-                    <a className="ui pink ribbon label" id='gratification-label'><i className='heart icon'></i>gratification</a>
+                    <a className="ui pink ribbon label" id='gratitude-label'><i className='heart icon'></i>gratitude</a>
                     <h3 className='grateful-title'>Today I'm grateful for ...</h3>
 
                     <button className='clear-button pencil' onClick={() => setIsEditingEntry(isEditingEntry => !isEditingEntry)}>

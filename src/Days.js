@@ -23,10 +23,10 @@ function Days({ days, onDelete }) {
     })
 
     const searchEntry = sortASC.filter((entry) => {
-        return entry.mood.toLowerCase().includes(search.toLowerCase())
+        return entry.entry.toLowerCase().includes(search.toLowerCase())
     })
 
-    // console.log(sortASC)
+    console.log(sortedDays)
 
     const day = searchEntry.map((day) => {
         return (
