@@ -627,3 +627,9 @@ text-align: right;
   color: #4e4d4d
 }
 
+
+.search {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

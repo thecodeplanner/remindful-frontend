@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import EditProfileForm from './EditProfileForm'
 
-function Profile({ currentUser }) {
+function Profile({ currentUser, days }) {
 
     const [isEditing, setIsEditing] = useState(false)
     const [firstName, setFirstName] = useState(currentUser.first_name)
@@ -38,7 +38,7 @@ function Profile({ currentUser }) {
                             <h3 className='user-title'>{(firstName) + ' ' + (lastName)} </h3>
                             <img className="profile-img" src={currentUser.image} alt='profile' />
                             <h4 className='water-title'>username: {username}</h4>
-                            <h4 className='water-title'>days logged: {currentUser.days.length} days</h4>
+                            <h4 className='water-title'>days logged: {days.length} days</h4>
                         </div>
                     </div>
 

@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import DayCard from './DayCard'
 import Sort from './Sort'
+import Search from './Search'
 
 function Days({ days, onDelete }) {
     const [ASC, setASC] = useState(false)
+    const [search, setSearch] = useState('')
 
     const sortedDays = days.map((day) => {
         return day
@@ -20,9 +22,13 @@ function Days({ days, onDelete }) {
        
     })
 
+    const searchEntry = sortASC.filter((entry) => {
+        return entry.mood.toLowerCase().includes(search.toLowerCase())
+    })
+
     // console.log(sortASC)
 
-    const day = sortASC.map((day) => {
+    const day = searchEntry.map((day) => {
         return (
             <DayCard key={day.id} day={day} onDelete={onDelete} />
         )
@@ -33,6 +39,9 @@ function Days({ days, onDelete }) {
             <a className="ui olive ribbon label" id='entry-label'><i className='paperclip icon'></i>entries</a>
             <div className='sort'>
                 <Sort ASC={ASC} onSetASC={setASC} />
+            </div>
+            <div className='search'>
+                <Search onSearch={setSearch} />
             </div>
             <div className='ui cards centered'>
                 {day}
