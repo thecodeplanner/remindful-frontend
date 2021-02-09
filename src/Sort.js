@@ -17,7 +17,7 @@ function Sort({ASC, onSetASC}) {
                 onChange={handleSort}
                 // onChange={() => {onSetASC(!ASC)}}
                 />
-            <label> ASC
+            <label>
             </label>
         </div>
 

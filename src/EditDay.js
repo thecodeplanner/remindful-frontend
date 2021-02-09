@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 
-function EditDay({dayEntry, id, onUpdateEntry}) {
+function EditDay({dayEntry, id, onUpdateEntry, onHandleUpdate, date, water, mood, selfcare, tasks }) {
     const [entry, setEntry] = useState(dayEntry)
 
     function handleFormSubmit(e) {
         e.preventDefault();
 
         const updatedEntry = {
-            entry
+            id,
+            date,
+            water_intake: water,
+            mood,
+            entry,
+            tasks,
+            selfcares:selfcare
         }
+        onHandleUpdate(updatedEntry)
 
         fetch(`http://localhost:3000/days/${id}`, {
             method: "PATCH", 

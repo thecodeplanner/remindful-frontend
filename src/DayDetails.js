@@ -206,7 +206,7 @@ function NewDay({onHandleUpdate}) {
                         <i className="pencil alternate icon" />
                     </button>
 
-                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} onUpdateEntry={handleUpdateEntry} /> : <div className='grateful'> {entry} </div>}
+                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} mood={mood} onUpdateEntry={handleUpdateEntry} onHandleUpdate={onHandleUpdate}/> : <div className='grateful'> {entry} </div>}
 
                 </div>
 
@@ -232,7 +232,7 @@ function NewDay({onHandleUpdate}) {
                                     <i className="pencil alternate icon" />
                             </button>
 
-                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} onUpdateMood={handleUpdateMood} onHandleUpdate={onHandleUpdate}/> : <p className='mood'>{mood}</p>}
+                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} entry={entry} onUpdateMood={handleUpdateMood} onHandleUpdate={onHandleUpdate}/> : <p className='mood'>{mood}</p>}
 
                         </div>
                     </div>

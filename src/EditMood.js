@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 
-function EditMood({ dayMood, id, date, water, tasks, selfcare, onUpdateMood, onHandleUpdate }) {
+function EditMood({ dayMood, id, date, water, tasks, selfcare, entry, onUpdateMood, onHandleUpdate }) {
     const [mood, setMood] = useState(dayMood)
 
     function handleFormSubmit(e) {
         e.preventDefault();
 
         const updatedMood = {
-            id: id,
+            id,
             mood,
+            entry,
             date, 
             water_intake: water,
             tasks, 
