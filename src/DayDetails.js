@@ -47,7 +47,7 @@ function NewDay({onHandleUpdate}) {
 
     const taskItems = tasks.map((task) => {
         return (
-            <TaskDetails key={task.id} description={task.description} status={task.complete} id={task.id} onDelete={handleDeleteTask} />
+            <TaskDetails key={task.id} description={task.description} status={task.complete} id={task.id} day_id={task.day_id} handleUpdate={handleUpdateTask} onDelete={handleDeleteTask} />
         )
     })
 
@@ -75,6 +75,30 @@ function NewDay({onHandleUpdate}) {
 
         onHandleUpdate(updatedTasks)
     } 
+
+
+    // FUNCTION TO HANDLE TOGGLE BETWEEN COMPLETE AND NOT COMPLETE TASKS //
+
+    function handleUpdateTask(updatedTask) {
+
+        const findTask = tasks.map((task) => {
+            return task.id === updatedTask.id ? updatedTask : task
+        })
+
+        setTasks(findTask)
+
+        const updatedStatusTask = {
+            id: day.id,
+            entry,
+            mood,
+            date: day.date,
+            water_intake: water,
+            tasks: findTask,
+            selfcares: selfcare
+        }
+
+        onHandleUpdate(updatedStatusTask)
+    }
 
     function handleSelfcare(newSelfcare) {
         const newSelfcareList = [...selfcare, newSelfcare]

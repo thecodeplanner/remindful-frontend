@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-function TaskDetails({description, status, id, onDelete}) {
+function TaskDetails({description, status, id, onDelete, handleUpdate, day_id}) {
     const [showStatus, setShowStatus] = useState(status)
 
     function handleStatus() {
@@ -8,8 +8,15 @@ function TaskDetails({description, status, id, onDelete}) {
         setShowStatus(!showStatus)
 
         const updatedStatus = {
-            complete: !showStatus
+            id,
+            description,
+            complete: !showStatus,
+            day_id 
         }
+        
+        handleUpdate(updatedStatus)
+
+
 
         fetch(`http://localhost:3000/tasks/${id}`, {
             method: "PATCH",
