@@ -1,4 +1,3 @@
-// import { format } from "date-fns";
 import React, {useState} from "react"
 import { useHistory } from "react-router-dom";
 
@@ -8,14 +7,11 @@ function DayCard({ day, onDelete }) {
     const [date, setDate] = useState('')
     const originalDate = (day.date)
 
-    // console.log(day)
-
     if (date === '') {
         const formattedDate = new Date(originalDate.split('-'))
         const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }
         setDate(formattedDate.toLocaleDateString('en-US', options))
     }
-    
 
     function handleDate() {
         history.push(`/day/${day.id}`)
@@ -28,9 +24,7 @@ function DayCard({ day, onDelete }) {
                 method: "DELETE"
             })
         }
-
         onDelete(day.id)
-
     }
 
     const completed = day.tasks.filter((task) => {
@@ -56,10 +50,7 @@ function DayCard({ day, onDelete }) {
                     <i className="trash alternate outline icon" />
                 </button>
             </div>
-
         </div>
-
-
 
 
     )

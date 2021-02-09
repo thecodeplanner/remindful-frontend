@@ -2,7 +2,15 @@ import DayCard from './DayCard'
 
 function Days({days, onDelete}) {
 
-    const day = days.map((day) => {
+    const sortedDays = days.map((day) => {
+        return day
+    }).sort(function(dayA, dayB) {
+        return dayB.id - dayA.id
+    })
+
+    // console.log(sortedDays)
+
+    const day = sortedDays.map((day) => {
         return (
             <DayCard key={day.id} day={day} onDelete={onDelete}/>
         )

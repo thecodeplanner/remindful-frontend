@@ -1,12 +1,9 @@
-
 import React, {useState} from "react"
 import { useHistory } from "react-router-dom";
-
 
 function AddDay({currentUser, onAddDay}) {
     const [day, setDay] = useState('')
     const history = useHistory()
-    console.log(day)
 
         function handleDayData(dayData) {
             onAddDay(dayData)
@@ -46,6 +43,7 @@ function AddDay({currentUser, onAddDay}) {
         value={day}
         onChange={(e) => setDay(e.target.value)}
         />
+        
         </div>
         <input className="ui mini basic button" type="submit" value="add" />
     </form>

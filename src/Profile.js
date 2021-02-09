@@ -19,7 +19,6 @@ function Profile({ currentUser }) {
         <div className='ui raised centered segment' >
             <a className="ui olive ribbon label" id="profile-label"><i className='user icon'></i>profile</a>
 
-
             <button className='clear-button pencil' onClick={() => setIsEditing(isEditing => !isEditing)}>
                 update profile  <i className="edit outline icon" />
             </button>

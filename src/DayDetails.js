@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 import EditDay from './EditDay';
 import EditMood from './EditMood';
 
-
 function NewDay({onHandleUpdate}) {
     const [day, setDay] = useState(null);
     const [date, setDate] = useState(null)
@@ -17,7 +16,6 @@ function NewDay({onHandleUpdate}) {
     const [tasks, setTasks] = useState(null)
     const [selfcare, setSelfcare] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
-
 
     const [isEditingEntry, setIsEditingEntry] = useState(false)
     const [isEditingMood, setIsEditingMood] = useState(false)
@@ -41,13 +39,11 @@ function NewDay({onHandleUpdate}) {
 
     if (!isLoaded) return <h2>Loading...</h2>;
 
-
     function formatDate(date) {
         let formattedDate = new Date(date.split('-'))
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
         return setDate(formattedDate.toLocaleDateString('en-US', options))
     }
-
 
     const taskItems = tasks.map((task) => {
         return (
@@ -231,20 +227,9 @@ function NewDay({onHandleUpdate}) {
                             <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />
 
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
-
-
-
-
-
-
-
-
         </div>
     )
 }

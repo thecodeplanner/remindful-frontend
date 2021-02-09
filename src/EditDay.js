@@ -36,9 +36,6 @@ function EditDay({dayEntry, id, onUpdateEntry}) {
             </div>
             <input className='ui basic button' type="submit" value="update" />
             </form>
-
-
-
         </div>
         
     )

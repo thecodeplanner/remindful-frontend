@@ -23,8 +23,7 @@ function Login({ setCurrentUser }) {
         
         <div className='ui raised segment centered' style={{backgroundColor: '#fefdca'}} >
             <div className='ui four column centered grid'>
-                <div className='column'>
-                   
+                <div className='column'>   
                     <h2 className='login-title'>yay, welcome back!</h2>
                     <div className='ui form'>
                         <form className="login-form" onSubmit={handleSubmit}>
@@ -36,8 +35,6 @@ function Login({ setCurrentUser }) {
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
                             </div>
-
-
                             <div className='field'>
                                 <input
                                     type="password"
@@ -50,28 +47,10 @@ function Login({ setCurrentUser }) {
 
                             <input className="ui basic button" type="submit" value="login" />
                         </form>
-
-                       
-                   
-
-
-
                     </div>
-                    
-
-
-
-
                 </div>
-
-
-
             </div>
-
-
         </div>
-
-
 
     )
 }

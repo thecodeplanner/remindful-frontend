@@ -20,15 +20,12 @@ function Home() {
             </div>
             
             <div className="signin-buttons">
-
                 <div className="ui medium basic buttons">
                     <button className="ui button" onClick={handleLogin}>login</button>
                     <div className="or"></div>
                     <button className="ui button" onClick={handleSignup}>sign up</button>
                 </div>
-
             </div>
-
         </div>
     )
 

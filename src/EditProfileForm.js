@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 
-
 function EditProfileForm({currentUser, onHandleUpdate}) {
   const [username, setUsername] = useState(currentUser.username)
   const [firstName, setFirstName] = useState(currentUser.first_name)

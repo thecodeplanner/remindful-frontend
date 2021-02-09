@@ -32,8 +32,6 @@ function Navbar({ currentUser, setCurrentUser }) {
                     </NavLink>
             }
 
-            {/* need logout button */}
-
         </div>
 
     )
