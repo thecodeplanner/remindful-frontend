@@ -16,7 +16,7 @@ function Profile({ currentUser }) {
     }
 
     return (
-        <div className='ui raised centered segment' >
+        <div className='ui raised centered segment' style={{backgroundColor: '#e0f9b5'}} >
             <a className="ui olive ribbon label" id="profile-label"><i className='user icon'></i>profile</a>
 
             <button className='clear-button pencil' onClick={() => setIsEditing(isEditing => !isEditing)}>
@@ -32,9 +32,9 @@ function Profile({ currentUser }) {
                     </div>
                 </div>
                 :
-                <div className='ui two column centered grid'>
+                <div className='ui three column centered grid'>
                     <div className='column'>
-                        <div className='user-info'>
+                        <div className='ui raised centered segment user-info'>
                             <h3 className='user-title'>{(firstName) + ' ' + (lastName)} </h3>
                             <img className="profile-img" src={currentUser.image} alt='profile' />
                             <h4 className='water-title'>username: {username}</h4>

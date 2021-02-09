@@ -14,6 +14,8 @@ function Days({ days, onDelete }) {
     const sortASC = sortedDays.sort(function(dayA, dayB) {
         if (ASC) {
             return dayA.id - dayB.id
+        }else {
+            return true
         }
        
     })
@@ -29,7 +31,7 @@ function Days({ days, onDelete }) {
     return (
         <div className='ui raised segment' style={{ backgroundColor: '#a5dee5' }}>
             <a className="ui olive ribbon label" id='entry-label'><i className='paperclip icon'></i>entries</a>
-            <div>
+            <div className='sort'>
                 <Sort ASC={ASC} onSetASC={setASC} />
             </div>
             <div className='ui cards centered'>

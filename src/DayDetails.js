@@ -71,7 +71,7 @@ function NewDay({onHandleUpdate}) {
             selfcares: selfcare
         }
 
-        console.log(updatedTasks)
+        // console.log(updatedTasks)
 
         onHandleUpdate(updatedTasks)
     } 

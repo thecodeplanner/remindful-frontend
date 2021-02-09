@@ -84,8 +84,8 @@ button:hover {
 
 
 .profile-img {
-  height: 25%;
-  width: 25%;
+  height: 40%;
+  width: 40%;
 }
 
 
@@ -550,12 +550,12 @@ div.user-info {
 }
 
 #delete-button {
-justify-content: right;
+text-align: right;
 }
 
 .user-title {
   font-family: 'Permanent Marker', cursive;
-  font-size: 50px;
+  font-size: 40px;
   color: #4e4d4d
 }
 
@@ -597,6 +597,27 @@ justify-content: right;
 
 #header-date {
   font-family: 'Permanent Marker', cursive;
+  font-size: 18px;
   color: #4e4d4d
 
 }
+
+.sort {
+  text-align: right;
+}
+
+#mood-entry {
+  font-family: 'Comfortaa', cursive;  
+  font-size: 12px;
+}
+
+#water-entry {
+  font-family: 'Comfortaa', cursive;  
+  font-size: 12px;
+}
+
+#task-entry {
+  font-family: 'Comfortaa', cursive;  
+  font-size: 12px;
+}
+

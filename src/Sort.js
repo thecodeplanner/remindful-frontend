@@ -2,19 +2,17 @@ import React from "react"
 
 function Sort({ASC, onSetASC}) {
 
-    // function handleToggle() {
-    //     onSetASC(!ASC)
-    // }
+    console.log(ASC)
 
     return (
         <div className='ui fitted slider checkbox'>
                 <input
                 type='radio'
-                tabindex='0'
-                checked={ASC}
-                onChange={() => onSetASC(!ASC)}
+                // tabindex='0'
+                value={ASC}
+                onChange={() => {onSetASC(!ASC)}}
                 />
-            <label> Sort ASC
+            <label> ASC
             </label>
         </div>
 
