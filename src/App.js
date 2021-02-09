@@ -60,7 +60,7 @@ function App() {
            <Today currentUser={currentUser} days={days} setDays={setDays} />
          </Route>
          <Route exact path='/profile'>
-           <Profile currentUser={currentUser} days={days} />
+           <Profile currentUser={currentUser} days={days} setCurrentUser={setCurrentUser} setDays={setDays}/>
          </Route>
          <Route exact path='/entries'>
            <Days days={days} onDelete={handleDelete}/>

@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import EditProfileForm from './EditProfileForm'
+import { useHistory } from "react-router-dom";
 
-function Profile({ currentUser, days }) {
+
+function Profile({ currentUser, days, setDays, setCurrentUser }) {
+    const history = useHistory()
 
     const [isEditing, setIsEditing] = useState(false)
     const [firstName, setFirstName] = useState(currentUser.first_name)
@@ -13,6 +16,19 @@ function Profile({ currentUser, days }) {
         setLastName(updatedInfo.last_name)
         setUsername(updatedInfo.username)
         setIsEditing(false)
+    }
+
+
+// FAKE DELETE ACCOUNT BC FAKE AUTH RN .. NEED FIRST USER //
+
+    function handleDelete() {
+        if (window.confirm('Are you sure you want to delete your account?')) {
+                alert('Sorry to see you go!')
+                setCurrentUser(null)
+                setDays(null)
+                history.push('/')
+
+            }
     }
 
     return (
@@ -45,9 +61,8 @@ function Profile({ currentUser, days }) {
                 </div>
             }
 
-            {/* NEED TO ADD CLICK HANDLER */}
             <div id='delete-button'>
-                <button className="ui mini negative basic button">Delete Account</button>
+                <button onClick={handleDelete} className="ui mini negative basic button">Delete Account</button>
             </div>
         </div>
 
