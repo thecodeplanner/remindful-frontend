@@ -30,6 +30,8 @@ function TaskDetails({description, status, id, onDelete, handleUpdate, day_id}) 
     }
 
     function handleDelete() {
+
+      
         console.log('delete!', id)
 
         fetch(`http://localhost:3000/tasks/${id}`, {

@@ -70,9 +70,6 @@ function NewDay({onHandleUpdate}) {
             tasks: newTaskList,
             selfcares: selfcare
         }
-
-        // console.log(updatedTasks)
-
         onHandleUpdate(updatedTasks)
     } 
 
@@ -114,6 +111,8 @@ function NewDay({onHandleUpdate}) {
         setMood(newMood)
         setIsEditingMood(false)
     }
+
+    //// WATER UPDATES ////
 
     function handleUpdateWaterEight() {
         const updateWater = {
@@ -163,11 +162,24 @@ function NewDay({onHandleUpdate}) {
 
     }
 
+    // HANDLE DELETE TASK //
+
     function handleDeleteTask(id) {
         const updatedTasks = tasks.filter((task) => {
             return task.id !== id
         })
         setTasks(updatedTasks)
+
+        const deletedTask = {
+            id: day.id,
+            entry,
+            mood,
+            date: day.date,
+            water_intake: water,
+            tasks: updatedTasks,
+            selfcares: selfcare
+        }
+        onHandleUpdate(deletedTask)
     }
 
     function handleDeleteSelfcare(id) {
