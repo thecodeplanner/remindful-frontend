@@ -11,15 +11,6 @@ function Today({days}) {
     const findToday = days.filter((day) => {
         return day.date === `${formattedDate}`
     })
-
-    // if (findToday.length === 0) {
-    //     alert("Please create a new entry!")
-    //     history.push('/calendar')    
-    // }else if (findToday.length === 1) {
-    //     const dayId = (findToday[0].id)
-    //     history.push(`/day/${dayId}`)
-    // }
-
        
     if (findToday.length === 1) {
         const dayId = (findToday[0].id)
@@ -32,9 +23,6 @@ function Today({days}) {
         history.push('/calendar') 
     }
 
-
-  
-    
 
 
     return (
