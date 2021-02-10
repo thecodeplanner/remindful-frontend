@@ -30,7 +30,7 @@ function Days({ days, onDelete }) {
         return entry.entry.toLowerCase().includes(search.toLowerCase())
     })
 
-    console.log(sortedDays)
+    // console.log(sortedDays)
 
     const day = searchEntry.map((day) => {
         return (
