@@ -7,6 +7,10 @@ function Days({ days, onDelete }) {
     const [ASC, setASC] = useState(false)
     const [search, setSearch] = useState('')
 
+    function handleSort() {
+       setASC(!ASC)
+    }
+
     const sortedDays = days.map((day) => {
         return day
     }).sort(function (dayA, dayB) {
@@ -34,11 +38,13 @@ function Days({ days, onDelete }) {
         )
     })
 
+
+
     return (
         <div className='ui raised segment' style={{ backgroundColor: '#a5dee5' }}>
             <a className="ui olive ribbon label" id='entry-label'><i className='paperclip icon'></i>entries</a>
             <div className='sort'>
-                <Sort ASC={ASC} onSetASC={setASC} />
+                <Sort ASC={ASC} handleSort={handleSort} />
             </div>
             <div className='search'>
                 <Search onSearch={setSearch} />

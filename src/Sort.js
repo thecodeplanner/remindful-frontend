@@ -1,20 +1,20 @@
 import React, {useState} from "react"
 
-function Sort({ASC, onSetASC}) {
+function Sort({ASC, onSetASC, handleSort}) {
 
     console.log(ASC)
 
-    function handleSort() {
-        onSetASC(!ASC)
-    }
+    // function handleSort() {
+    //     onSetASC(!ASC)
+    // }
 
     return (
         <div className='ui fitted slider checkbox'>
                 <input
                 type='radio'
                 // tabindex='0'
-                value={ASC}
-                onChange={handleSort}
+                checked={ASC}
+                onClick={handleSort}
                 // onChange={() => {onSetASC(!ASC)}}
                 />
             <label>
