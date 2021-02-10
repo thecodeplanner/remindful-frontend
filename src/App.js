@@ -14,11 +14,13 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [days, setDays] = useState(null)
 
+
   if (!days && currentUser) {
       fetch(`http://localhost:3000/users/${currentUser.id}`)
         .then(res => res.json())
         .then(data => setDays(data.days))
   }
+
 
   function handleDelete(id) {
     const updatedDays = days.filter((day) => {

@@ -23,8 +23,9 @@ function DayCard({ day, onDelete }) {
             fetch(`http://localhost:3000/days/${day.id}`, {
                 method: "DELETE"
             })
+            onDelete(day.id)
         }
-        onDelete(day.id)
+        
     }
 
     const completed = day.tasks.filter((task) => {
