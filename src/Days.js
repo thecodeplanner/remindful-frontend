@@ -8,7 +8,7 @@ function Days({ days, onDelete }) {
     const [search, setSearch] = useState('')
 
     function handleSort() {
-       setASC(!ASC)
+        setASC(!ASC)
     }
 
     const sortedDays = days.map((day) => {
@@ -17,13 +17,13 @@ function Days({ days, onDelete }) {
         return dayB.id - dayA.id
     })
 
-    const sortASC = sortedDays.sort(function(dayA, dayB) {
+    const sortASC = sortedDays.sort(function (dayA, dayB) {
         if (ASC) {
             return dayA.id - dayB.id
-        }else {
+        } else {
             return true
         }
-       
+
     })
 
     const searchEntry = sortASC.filter((entry) => {
@@ -38,6 +38,7 @@ function Days({ days, onDelete }) {
         )
     })
 
+   
 
 
     return (

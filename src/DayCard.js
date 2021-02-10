@@ -34,9 +34,12 @@ function DayCard({ day, onDelete }) {
 
     const numCompleted = completed.length
 
-    return (
+ 
 
-        <div className='ui card' id='day-card' style={{ backgroundColor: '#e0f9b5' }}>
+    return (
+     
+
+        <div className='ui card ' id='day-card' style={{ backgroundColor: '#e0f9b5' }} >
             <div onClick={handleDate} className="content">
                 <div className="header" id='header-date'>{date}</div>
                 <h4 className="extra content" id='grateful-entry'>grateful for: {day.entry}</h4>
@@ -51,8 +54,9 @@ function DayCard({ day, onDelete }) {
                     <i className="trash alternate outline icon" />
                 </button>
             </div>
+         
         </div>
-
+    
 
     )
 }
