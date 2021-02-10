@@ -16,6 +16,7 @@ function AddDay({currentUser, onAddDay}) {
 
             const newDay = {
                 date: day,
+                entry: ' ',
                 user_id: currentUser.id,
                 water_intake: 0
             }
