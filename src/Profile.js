@@ -15,6 +15,8 @@ function Profile({ currentUser, days, setDays, setCurrentUser }) {
         setFirstName(updatedInfo.first_name)
         setLastName(updatedInfo.last_name)
         setUsername(updatedInfo.username)
+        
+        setCurrentUser(updatedInfo)
         setIsEditing(false)
     }
 
