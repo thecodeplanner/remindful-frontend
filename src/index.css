@@ -236,6 +236,15 @@ button:hover {
 
 /* Main Page Layout */
 
+#page-buttons {
+ text-align: center;
+}
+
+button.clear-button.arrows {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 
 /* clear background for button */
 .clear-button {

@@ -6,8 +6,9 @@ import SelfcareForm from './SelfcareForm'
 import { useParams } from "react-router-dom";
 import EditDay from './EditDay';
 import EditMood from './EditMood';
+import { useHistory } from "react-router-dom";
 
-function NewDay({onHandleUpdate}) {
+function NewDay({ onHandleUpdate, days }) {
     const [day, setDay] = useState(null);
     const [date, setDate] = useState(null)
     const [entry, setEntry] = useState(null)
@@ -19,6 +20,9 @@ function NewDay({onHandleUpdate}) {
 
     const [isEditingEntry, setIsEditingEntry] = useState(false)
     const [isEditingMood, setIsEditingMood] = useState(false)
+
+    const history = useHistory()
+
 
     const params = useParams()
 
@@ -71,7 +75,7 @@ function NewDay({onHandleUpdate}) {
             selfcares: selfcare
         }
         onHandleUpdate(updatedTasks)
-    } 
+    }
 
 
     // FUNCTION TO HANDLE TOGGLE BETWEEN COMPLETE AND NOT COMPLETE TASKS //
@@ -189,12 +193,51 @@ function NewDay({onHandleUpdate}) {
         setSelfcare(updatedSelfcare)
     }
 
+    // HANDLE PAGINATION
+
+    const dayIds = days.map((day) => {
+        return day.id
+    })
+
+    function handleBack() {
+       
+        const findId = day.id - 1
+
+        if (dayIds.includes(findId)) {
+            history.push(`/day/${findId}`)
+        }else {
+            alert("You've reached the end of your entries!")
+        }
+
+        }
+
+    function handleNext() {
+        const findId = day.id + 1
+
+        if (dayIds.includes(findId)) {
+            history.push(`/day/${findId}`)
+        }else {
+            alert("You've reached the end of your entries!")
+        }
+    }
+
 
     return (
         <div className='ui raised segment'>
-            <div className='date-page'> 
-                <h2 className='bungee-font'>{date}</h2> 
+
+<div id='page-buttons'>
+                <button className='clear-button arrows' onClick={handleBack}><i className='chevron circle left icon'> </i>
+                </button>
+                <button className='clear-button arrows' onClick={handleNext}><i className='chevron circle right icon'> </i>
+                </button>
             </div>
+            <div className='date-page'>
+                <h2 className='bungee-font'>{date}</h2>
+
+            </div>
+
+            
+
 
             {/* GRATITUDE DIV */}
             <div className='column'>
@@ -206,7 +249,7 @@ function NewDay({onHandleUpdate}) {
                         <i className="pencil alternate icon" />
                     </button>
 
-                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} mood={mood} onUpdateEntry={handleUpdateEntry} onHandleUpdate={onHandleUpdate}/> : <div className='grateful'> {entry} </div>}
+                    {isEditingEntry ? <EditDay dayEntry={entry} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} mood={mood} onUpdateEntry={handleUpdateEntry} onHandleUpdate={onHandleUpdate} /> : <div className='grateful'> {entry} </div>}
 
                 </div>
 
@@ -229,10 +272,10 @@ function NewDay({onHandleUpdate}) {
                             <h4 className='mood-title'> How I'm feeling . . .</h4>
 
                             <button className='clear-button pencil' onClick={() => setIsEditingMood(isEditingMood => !isEditingMood)}>
-                                    <i className="pencil alternate icon" />
+                                <i className="pencil alternate icon" />
                             </button>
 
-                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} entry={entry} onUpdateMood={handleUpdateMood} onHandleUpdate={onHandleUpdate}/> : <p className='mood'>{mood}</p>}
+                            {isEditingMood ? <EditMood dayMood={mood} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} entry={entry} onUpdateMood={handleUpdateMood} onHandleUpdate={onHandleUpdate} /> : <p className='mood'>{mood}</p>}
 
                         </div>
                     </div>
@@ -265,6 +308,8 @@ function NewDay({onHandleUpdate}) {
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     )

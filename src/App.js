@@ -70,7 +70,7 @@ function App() {
            <Days days={days} onDelete={handleDelete}/>
          </Route>
          <Route exact path='/day/:id'>
-           <DayDetails onHandleUpdate={handleUpdateDay} />
+           <DayDetails onHandleUpdate={handleUpdateDay} days={days}/>
          </Route>
        </Switch>
      </Router>
