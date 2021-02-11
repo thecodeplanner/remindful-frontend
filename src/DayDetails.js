@@ -195,9 +195,13 @@ function NewDay({ onHandleUpdate, days }) {
 
     // HANDLE PAGINATION
 
+
     const dayIds = days.map((day) => {
-        return day.id
+        return (day.id)
     })
+
+    console.log(dayIds)
+
 
     function handleBack() {
        
@@ -209,7 +213,17 @@ function NewDay({ onHandleUpdate, days }) {
             alert("You've reached the end of your entries!")
         }
 
+         // for loop
+
+         // let x = day.id
+
+         // if dayId === findId, find the index from array and get the id previous or after
+        // then push to that id
         }
+
+       
+
+
 
     function handleNext() {
         const findId = day.id + 1
