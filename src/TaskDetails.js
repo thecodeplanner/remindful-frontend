@@ -44,8 +44,9 @@ function TaskDetails({description, status, id, onDelete, handleUpdate, day_id}) 
     return (
         <>
             <div className='to-do-list'>
-            {showStatus ? <i onClick={handleStatus} className="check circle icon" /> : <i onClick={handleStatus} className="circle outline icon" />}
-            {description}
+            {showStatus ? <> <i onClick={handleStatus} className="check circle icon" /> <span style={{ textDecorationLine: 'line-through' }}>{description} </span> </> : <> <i onClick={handleStatus} className="circle outline icon" /> <span>{description}</span></>}
+            {/* {description}
+            {showStatus ? <p>{description}</p> : <p style={{ textDecorationLine: 'line-through' }}>{description}</p> } */}
             {showStatus ? <i onClick={handleDelete} className='window close outline icon' id='x-icon'/> : null}
             </div>
            
