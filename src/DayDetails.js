@@ -200,7 +200,7 @@ function NewDay({ onHandleUpdate, days }) {
         return (day.id)
     })
 
-    console.log(dayIds)
+    // console.log(dayIds)
 
 
     function handleBack() {
