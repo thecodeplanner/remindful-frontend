@@ -213,7 +213,7 @@ button:hover {
 }
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
-  background: #ffffa9;
+  background: #fefdca;
 }
 .react-calendar__tile--hasActive {
   background: #a5dee5;
