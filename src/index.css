@@ -624,6 +624,10 @@ text-align: right;
 
 .sort {
   text-align: right;
+  color: #4e4d4d;
+  font-family: 'Comfortaa', cursive;  
+  font-size: 12px;
+
 }
 
 #mood-entry {

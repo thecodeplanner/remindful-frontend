@@ -223,8 +223,6 @@ function NewDay({ onHandleUpdate, days }) {
 
        
 
-
-
     function handleNext() {
         const findId = day.id + 1
 

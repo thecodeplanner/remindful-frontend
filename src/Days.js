@@ -47,6 +47,7 @@ function Days({ days, onDelete }) {
             <div className='sort'>
                 <Sort ASC={ASC} handleSort={handleSort} />
             </div>
+            <div className='sort'>sort by Jan-Dec</div>
             <div className='search'>
                 <Search onSearch={setSearch} />
             </div>

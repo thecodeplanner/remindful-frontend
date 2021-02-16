@@ -4,13 +4,14 @@ function Sort({ASC, handleSort}) {
 
     return (
         <div className='ui fitted slider checkbox'>
+            
                 <input
                 type='checkbox'
                 checked={ASC}
                 onChange={handleSort}
                 />
-            <label>
-            </label>
+                <label></label>
+
         </div>
 
 
