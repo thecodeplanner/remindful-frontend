@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Navbar from './Navbar'
+import Footer from './Footer'
 import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
@@ -73,6 +74,7 @@ function App() {
            <DayDetails onHandleUpdate={handleUpdateDay} days={days}/>
          </Route>
        </Switch>
+       <Footer/>
      </Router>
     </div>
   );
