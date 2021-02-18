@@ -45,7 +45,7 @@ function App() {
  
 
   return (
-    <div>
+    <div className='main-container'>
      <Router>
        <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} setDays={setDays}/>
        <Switch>

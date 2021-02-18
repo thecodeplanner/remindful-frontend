@@ -19,6 +19,44 @@ body {
   
 }
 
+
+
+#footer {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 18px;
+  text-align: center;
+  padding:15px;
+  color: #4e4d4d;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-decoration: #ffcfdf wavy underline;
+  /* text-decoration: underline dotted #ffcfdf; */
+}
+
+
+* {
+  box-sizing: border-box;
+ }
+ *:before,
+ *:after {
+  box-sizing: border-box;
+ }
+ html,
+ body {
+  height: 100%;
+  position: relative;
+ }
+ .main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 80px; /* height of your footer */
+ }
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -484,7 +522,6 @@ button.clear-button.arrows {
   font-family: 'Cedarville Cursive', cursive;
   font-size: 30px;
   color: #4e4d4d;
-
 }
 
 div .selfcare-list {
@@ -511,7 +548,6 @@ div .selfcare-list {
   font-family: 'Comfortaa', cursive;  
   font-size: 22px;
   color: #4e4d4d;
-
 }
 
 .grateful {
@@ -523,6 +559,8 @@ div .selfcare-list {
 .to-do {
   font-family: 'Permanent Marker', cursive;
   font-size: 28px;
+  text-decoration: underline;
+
 }
 
 div .to-do-list {
@@ -534,18 +572,20 @@ div .to-do-list {
 .water-title {
   font-family: 'Poiret One', cursive;
   font-size: 22px;
+  text-decoration: underline dotted #a5dee5;
 }
 
 .mood-title {
   font-family: 'Nixie One', cursive;
   font-size: 20px;
-  color: #4e4d4d
+  color: #4e4d4d;
+
 }
 
 .mood {
   font-family: 'Nixie One', cursive;
   font-size: 18px;
-  color: #4e4d4d
+  color: #4e4d4d;
 
 }
 
@@ -572,7 +612,8 @@ text-align: right;
 .user-title {
   font-family: 'Permanent Marker', cursive;
   font-size: 40px;
-  color: #4e4d4d
+  color: #4e4d4d;
+  padding: 5px;
 }
 
 #cal-label {
@@ -614,7 +655,8 @@ text-align: right;
 #header-date {
   font-family: 'Permanent Marker', cursive;
   font-size: 18px;
-  color: #4e4d4d
+  color: #4e4d4d;
+  text-decoration: underline;
 
 }
 
@@ -643,12 +685,15 @@ text-align: right;
 #task-entry {
   font-family: 'Comfortaa', cursive;  
   font-size: 12px;
+  text-decoration: underline dotted;
+
+  
 }
 
 #grateful-entry {
   font-family: 'Comfortaa', cursive;  
   font-size: 12px;
-  color: #4e4d4d
+  color: #4e4d4d;
 }
 
 
@@ -656,12 +701,4 @@ text-align: right;
   text-align: right;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-#footer {
-  font-family: 'Cedarville Cursive', cursive;
-  font-size: 18px;
-  text-align: center;
-  padding-top:20px;
-  color: #4e4d4d;
 }
