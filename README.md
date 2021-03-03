@@ -6,9 +6,7 @@ This was built with a React frontend and Ruby on Rails for the [backend](https:/
 
 ## Demo Video
 
-A demo video of this app can be viewed below: 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xM5kdWkimJo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+A demo video of this app can be viewed [here](https://www.youtube.com/watch?v=xM5kdWkimJo).
 
 
 ## Bundle Install
