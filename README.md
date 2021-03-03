@@ -4,6 +4,12 @@ Remindful is a self-care journaling app made for users to keep track of their da
 
 This was built with a React frontend and Ruby on Rails for the [backend](https://github.com/thecodeplanner/remindful-backend).
 
+## Demo Video
+
+A demo video of this app can be viewed below: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xM5kdWkimJo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Bundle Install
 
