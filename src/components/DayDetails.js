@@ -198,24 +198,22 @@ function NewDay({ onHandleUpdate, days }) {
     })
 
     function handleBack() {
-       
+
         const findId = day.id - 1
 
         if (dayIds.includes(findId)) {
             history.push(`/day/${findId}`)
-        }else {
+        } else {
             alert("You've reached the end of your entries!")
         }
-        }
-
-       
+    }
 
     function handleNext() {
         const findId = day.id + 1
 
         if (dayIds.includes(findId)) {
             history.push(`/day/${findId}`)
-        }else {
+        } else {
             alert("You've reached the end of your entries!")
         }
     }
@@ -224,7 +222,7 @@ function NewDay({ onHandleUpdate, days }) {
     return (
         <div className='ui raised segment'>
 
-<div id='page-buttons'>
+            <div id='page-buttons'>
                 <button className='clear-button arrows' onClick={handleBack}><i className='chevron circle left icon'> </i>
                 </button>
                 <button className='clear-button arrows' onClick={handleNext}><i className='chevron circle right icon'> </i>
@@ -234,9 +232,6 @@ function NewDay({ onHandleUpdate, days }) {
                 <h2 className='bungee-font'>{date}</h2>
 
             </div>
-
-            
-
 
             {/* GRATITUDE DIV */}
             <div className='column'>
@@ -275,7 +270,6 @@ function NewDay({ onHandleUpdate, days }) {
                             </button>
 
                             {isEditingMood ? <EditMood dayMood={mood} id={day.id} date={day.date} water={water} selfcare={selfcare} tasks={tasks} entry={entry} onUpdateMood={handleUpdateMood} onHandleUpdate={onHandleUpdate} /> : <p className='mood'>{mood}</p>}
-
                         </div>
                     </div>
 
@@ -303,12 +297,9 @@ function NewDay({ onHandleUpdate, days }) {
                             <h3 className='selfcare-title'>self-care checklist</h3>
                             {selfcareItems}
                             <SelfcareForm dayId={day.id} setAllSelfcare={handleSelfcare} />
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     )

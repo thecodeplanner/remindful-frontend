@@ -18,9 +18,6 @@ function SelfcareDetails({description, status, id, onDelete}) {
             },
             body: JSON.stringify(updatedStatus)
         })  
-            // .then(res => res.json())
-            // .then(data => console.log(data))
-
     }
 
     function handleDelete() {

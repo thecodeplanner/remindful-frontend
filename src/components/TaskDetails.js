@@ -16,8 +16,6 @@ function TaskDetails({description, status, id, onDelete, handleUpdate, day_id}) 
         
         handleUpdate(updatedStatus)
 
-
-
         fetch(`http://localhost:3000/tasks/${id}`, {
             method: "PATCH",
             headers: {
@@ -25,8 +23,7 @@ function TaskDetails({description, status, id, onDelete, handleUpdate, day_id}) 
             },
             body: JSON.stringify(updatedStatus)
         })  
-            // .then(res => res.json())
-            // .then(data => console.log(data))
+    
     }
 
     function handleDelete() {

@@ -30,15 +30,12 @@ function Days({ days, onDelete }) {
         return entry.entry.toLowerCase().includes(search.toLowerCase())
     })
 
-    // console.log(sortedDays)
-
     const day = searchEntry.map((day) => {
         return (
             <DayCard key={day.id} day={day} onDelete={onDelete} />
         )
     })
 
-   
 
 
     return (

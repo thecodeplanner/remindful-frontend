@@ -26,7 +26,6 @@ function SelfcareForm({dayId, setAllSelfcare}) {
         setDescription('')
     }
 
-    
 
     return (
         <div className='ui form'>

@@ -4,10 +4,6 @@ import React, {useState} from "react"
 function TaskForm({dayId, setAllTasks, day}) {
     const [description, setDescription] = useState('')
 
-    // const dayId = tasks.filter((task) => task.day_id)
-    // console.log(dayId)
-    // console.log(dayId)
-
     function handleSubmit(e) {
         e.preventDefault()
 
@@ -16,7 +12,7 @@ function TaskForm({dayId, setAllTasks, day}) {
             complete: false,
             day_id: dayId
         }
-        // console.log(newTask)
+
 
         fetch('http://localhost:3000/tasks', {
             method: "POST",

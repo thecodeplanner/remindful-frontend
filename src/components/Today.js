@@ -24,7 +24,6 @@ function Today({days}) {
     }
 
 
-
     return (
         <div>
         </div>

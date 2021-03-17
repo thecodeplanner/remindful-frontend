@@ -6,7 +6,6 @@ function EditProfileForm({currentUser, onHandleUpdate}) {
   const [lastName, setLastName] = useState(currentUser.last_name)
   const [password, setPassword] = useState('')
 
-  console.log(username)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -18,9 +17,6 @@ function EditProfileForm({currentUser, onHandleUpdate}) {
       last_name: lastName,
       password
     }
-    console.log(updatedUserInfo)
-
-    // onHandleUpdate(updatedUserInfo)
 
     fetch(`http://localhost:3000/users/${currentUser.id}`, {
       method: "PATCH", 
@@ -31,12 +27,6 @@ function EditProfileForm({currentUser, onHandleUpdate}) {
   })
       .then(res => res.json())
       .then(userData => {onHandleUpdate(userData)})
-
-      // How to update form after submit? 
-
-      // setFirstName(userData.first_name)
-      // setLastName(userData.last_name)
-      // setUsername(userData.username)
 
   }
 

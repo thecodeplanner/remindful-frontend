@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 
 function DayCard({ day, onDelete }) {
     const history = useHistory()
-
     const [date, setDate] = useState('')
     const originalDate = (day.date)
 
@@ -33,7 +32,6 @@ function DayCard({ day, onDelete }) {
     })
 
     const numCompleted = completed.length
-
  
 
     return (
@@ -43,7 +41,6 @@ function DayCard({ day, onDelete }) {
             <div onClick={handleDate} className="content">
                 <div className="header" id='header-date'>{date}</div>
                 <h4 className="extra content" id='grateful-entry'>grateful for: {day.entry}</h4>
-
                 <h4 className="description" id='mood-entry'>mood: {day.mood}</h4>
                 <h4 className="description" id='water-entry'>water intake: {day.water_intake} oz.</h4>
                 <h4 className="description" id='task-entry'>{numCompleted} of {day.tasks.length} tasks completed</h4>
