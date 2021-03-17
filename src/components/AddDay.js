@@ -21,8 +21,6 @@ function AddDay({currentUser, onAddDay}) {
                 water_intake: 0
             }
 
-            console.log(newDay)
-
             fetch("http://localhost:3000/days", {
                 method: "POST",
                 headers: {

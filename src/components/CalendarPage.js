@@ -53,7 +53,6 @@ function CalendarPage({ onAddDay, currentUser }) {
                 <div className='note-four'>
                     <div>What is something I'm proud of this month?</div>
                 </div>
-
             </div>
         </div>
 

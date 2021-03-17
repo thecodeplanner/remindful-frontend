@@ -22,8 +22,6 @@ function NewDay({ onHandleUpdate, days }) {
     const [isEditingMood, setIsEditingMood] = useState(false)
 
     const history = useHistory()
-
-
     const params = useParams()
 
     useEffect(() => {
@@ -195,13 +193,9 @@ function NewDay({ onHandleUpdate, days }) {
 
     // HANDLE PAGINATION
 
-
     const dayIds = days.map((day) => {
         return (day.id)
     })
-
-    // console.log(dayIds)
-
 
     function handleBack() {
        
@@ -212,13 +206,6 @@ function NewDay({ onHandleUpdate, days }) {
         }else {
             alert("You've reached the end of your entries!")
         }
-
-         // for loop
-
-         // let x = day.id
-
-         // if dayId === findId, find the index from array and get the id previous or after
-        // then push to that id
         }
 
        
