@@ -7,8 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
 
 
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,7 +16,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   
 }
-
 
 
 #footer {
@@ -31,7 +28,6 @@ body {
   bottom: 0;
   width: 100%;
   text-decoration: #ffcfdf wavy underline;
-  /* text-decoration: underline dotted #ffcfdf; */
 }
 
 
@@ -80,7 +76,6 @@ code {
 
 
 .button {
-  /* font-family: 'Permanent Marker', cursive; */
   font-family: 'Cedarville Cursive', cursive;
   font-size: 25px;
   background-color: #a5dee5;
@@ -117,11 +112,6 @@ button:hover {
     text-align: center;
     padding-top: 35px;
 }
-
-
-
-
-
 
 
 .profile-img {
@@ -313,10 +303,6 @@ button.clear-button.arrows {
   height: 100%;
 }
 
-
-
-
- 
 
 /* STICKY NOTES STYLING */
 
@@ -518,7 +504,6 @@ button.clear-button.arrows {
 /* FONTS */
 
 .selfcare-title {
-  /* font-family: 'Raleway Dots', cursive; */
   font-family: 'Cedarville Cursive', cursive;
   font-size: 30px;
   color: #4e4d4d;
@@ -579,14 +564,12 @@ div .to-do-list {
   font-family: 'Nixie One', cursive;
   font-size: 20px;
   color: #4e4d4d;
-
 }
 
 .mood {
   font-family: 'Nixie One', cursive;
   font-size: 18px;
   color: #4e4d4d;
-
 }
 
 #heart {

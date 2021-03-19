@@ -24,7 +24,6 @@ function Signup({setCurrentUser}) {
         <div className='ui raised segment centered' style={{backgroundColor: '#e0f9b5'}}>
             <div className='ui four column centered grid'>
                 <div className='column'>
-                   
                     <h2 className='login-title'>let's get started!</h2>
                     <div className='ui form'>
                         <form className="login-form" onSubmit={handleSubmit}>
@@ -52,8 +51,6 @@ function Signup({setCurrentUser}) {
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
                             </div>
-
-
                             <div className='field'>
                                 <input
                                     type="password"
@@ -63,30 +60,12 @@ function Signup({setCurrentUser}) {
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
                             </div>
-
                             <input className="ui basic button" type="submit" value="create new account" />
                         </form>
-
-                       
-                   
-
-
-
                     </div>
-                    
-
-
-
-
                 </div>
-
-
-
             </div>
-
-
         </div>
-
 
     )
 }
